@@ -2,6 +2,11 @@
 
 ![Alt text](screenshot/home.png?raw=true "SIMSPALD")
 
+![Alt text](screenshot/map.png?raw=true "Map")
+
+![Alt text](screenshot/about.png?raw=true "Tentang")
+
+
 # Changelog
 
 All notable changes to this project will be documented in this file.
