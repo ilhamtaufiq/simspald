@@ -69,7 +69,7 @@ https://templatemo.com/tm-563-seo-dream
             <!-- ***** Menu Start ***** -->
             <ul class="nav">
               <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
-              <li class="scroll-to-section"><a href="#features">Features</a></li>
+              <li class="scroll-to-section"><a href="#features">Map</a></li>
               <li class="scroll-to-section"><a href="#about">Tentang SPALD</a></li>
               <li class="scroll-to-section"><a href="#services">Infografik</a></li>
               <li class="scroll-to-section"><a href="#portfolio">Dokumentasi</a></li>
@@ -95,7 +95,7 @@ https://templatemo.com/tm-563-seo-dream
               <div class="left-content header-text wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1s">
                 <div class="row">
                   <div class="col-lg-12">
-                      <em>Sistem Pengolahan Air Limbah Domestik (SPALD)</em>
+                      <em>Sistem Pengolahan Air Limbah Domestik <br />(SPALD)</em>
                   </div>
                   <div class="col-lg-12">
                     <h2>SIMSPALD Cianjur</h2>
@@ -121,7 +121,7 @@ https://templatemo.com/tm-563-seo-dream
             <div class="section-heading wow bounceIn" data-wow-duration="1s" data-wow-delay="0.2s">
                 <h2><span>Peta Sebaran SPALD</span></h2>
               </div>
-            <div class="features-content" id="map" style="width: 100%; height: 400px;"></div>
+            <div class="features-content" id="map" style="width: 100%; height: 600px;"></div>
         </div>
         </div>
       </div>
