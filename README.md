@@ -29,3 +29,9 @@ All notable changes to this project will be documented in this file.
 
 - Minor fixed halaman depan
 - README.md
+
+### Built with:
+
+- Laravel (https://laravel.com)
+- AdminLTE (https://adminlte.io)
+- TemplateMO (https://themewagon.com/author/templatemo)
