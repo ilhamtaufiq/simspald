@@ -8,6 +8,8 @@ use App\Http\Controllers\DataRumahController;
 use App\Http\Controllers\KoordinatController;
 use App\Http\Controllers\TargetCapaianController;
 use App\Http\Controllers\RealisasiCapaianController;
+use App\Http\Controllers\WelcomeController;
+
 
 
 
@@ -23,11 +25,14 @@ use App\Http\Controllers\RealisasiCapaianController;
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/
+
 
 Route::get('/', function () {
     return view('welcome');
 });
+*/
+Route::get('/', [App\Http\Controllers\WelcomeController::class, 'index'])->name('welcome');
+
 
 Auth::routes();
 
