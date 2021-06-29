@@ -32,6 +32,6 @@ All notable changes to this project will be documented in this file.
 
 ### Built with:
 
-- Laravel (https://laravel.com)
-- AdminLTE (https://adminlte.io)
-- TemplateMO (https://themewagon.com/author/templatemo)
+- Laravel [laravel](https://laravel.com)
+- AdminLTE [AdminLTE](https://adminlte.io)
+- TemplateMO [TemplateMO](https://themewagon.com/author/templatemo)
