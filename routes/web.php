@@ -16,6 +16,7 @@ use App\Http\Controllers\WelcomeController;
 
 
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -56,8 +57,9 @@ Route::post('/desa/update/{id_desa}', [DesaController::class, 'update']);
 
 //spald
 Route::get('/spald', [SpaldController::class, 'index'])->name('spald');
-Route::get('/spald/add', [SpaldController::class, 'add']);
+Route::get('/spald/input', [SpaldController::class, 'add']);
 Route::post('/spald/insert', [SpaldController::class, 'insert']);
+Route::get('/spald/desa/{id_kec}', [SpaldController::class, 'getdesa']);
 Route::get('/spald/edit/{id_desa}', [SpaldController::class, 'edit']);
 Route::get('/spald/delete/{id_desa}', [SpaldController::class, 'delete']);
 Route::post('/spald/update/{id_desa}', [SpaldController::class, 'update']);
@@ -93,3 +95,4 @@ Route::post('/realisasi/insert', [RealisasiCapaianController::class, 'insert']);
 Route::get('/realisasi/edit/{id_desa}', [RealisasiCapaianController::class, 'edit']);
 Route::get('/realisasi/delete/{id_desa}', [RealisasiCapaianController::class, 'delete']);
 Route::post('/realisasi/update/{id_desa}', [RealisasiCapaianController::class, 'update']);
+

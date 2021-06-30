@@ -111,7 +111,7 @@ var peta4 = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}
 
    @foreach($koordinat as $data)
       L.marker([<?= $data->latlong ?>]).addTo(map);
-  @endforeach
+   @endforeach
     $(function () {
       $("#example1").DataTable({
         "responsive": true, "lengthChange": false, "autoWidth": false,

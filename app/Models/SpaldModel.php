@@ -16,6 +16,13 @@ class SpaldModel extends Model
        ->join('tbl_desa', 'tbl_desa.id_desa', '=', 'tbl_spald.id_desa')
        ->get();
     }
+
+    public function InsertData($data)
+    {
+        DB::table('tbl_spald')
+        ->insert($data);
+    }
+
     public function DeleteData($id_spald)
     {
         return DB::table('tbl_spald')
