@@ -23,10 +23,24 @@ class SpaldModel extends Model
         ->insert($data);
     }
 
+    public function DetailData($id_spald)
+    {
+        return DB::table('tbl_spald')
+        ->join('tbl_kecamatan', 'tbl_kecamatan.id_kec', '=', 'tbl_spald.id_kec')
+        ->join('tbl_desa', 'tbl_desa.id_desa', '=', 'tbl_spald.id_desa')
+        ->where('id_spald', $id_spald)->first();
+    }
+
+    public function UpdateData($id_spald, $data)
+    {
+        return DB::table('tbl_spald')
+        ->where('id_spald', $id_spald)
+        ->update($data);
+    }
+
     public function DeleteData($id_spald)
     {
         return DB::table('tbl_spald')
-        ->join('tbl_koordinat', 'tbl_koordinat.id_spald', '=', 'tbl_spald.id_spald')
         ->where('id_spald', $id_spald)
         ->delete();
     }

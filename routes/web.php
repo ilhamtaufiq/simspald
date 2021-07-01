@@ -60,9 +60,9 @@ Route::get('/spald', [SpaldController::class, 'index'])->name('spald');
 Route::get('/spald/input', [SpaldController::class, 'add']);
 Route::post('/spald/insert', [SpaldController::class, 'insert']);
 Route::get('/spald/desa/{id_kec}', [SpaldController::class, 'getdesa']);
-Route::get('/spald/edit/{id_desa}', [SpaldController::class, 'edit']);
-Route::get('/spald/delete/{id_desa}', [SpaldController::class, 'delete']);
-Route::post('/spald/update/{id_desa}', [SpaldController::class, 'update']);
+Route::get('/spald/edit/{id_spald}', [SpaldController::class, 'edit']);
+Route::get('/spald/delete/{id_spald}', [SpaldController::class, 'delete']);
+Route::post('/spald/update/{id_spald}', [SpaldController::class, 'update']);
 
 //rumah
 Route::get('/rumah', [DataRumahController::class, 'index'])->name('rumah');

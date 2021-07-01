@@ -38,8 +38,9 @@
                         <td>{{$d->n_desa}}</td>
                         <td>{{$d->n_kec}}</td>
                         <td class="text-center">
-                            <a href="/desa/edit/{{$d->id_spald}}"><i class="fa fa-edit"></i></a>
-                            <button class="btn btn-sm btn-primary" href="/desa/delete/{{$d->id_spald}}" data-toggle="modal" data-target="#delete{{$d->id_spald}}"><i class="fa fa-trash "></i></button>
+                            <a href="/spald/edit/{{$d->id_spald}}"><i class="fa fa-edit"></i></a>
+                            <button class="btn btn-sm btn-danger" href="/desa/delete/{{$d->id_spald}}" data-toggle="modal" data-target="#delete{{$d->id_spald}}"><i class="fa fa-trash "></i></button>
+                            <a href="/spald/detail/{{$d->id_spald}}"><i class="fa fa-eye"></i></a>
                         </td>
                     </tr>    
                     @endforeach
