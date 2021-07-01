@@ -49,34 +49,39 @@ class SpaldController extends Controller
     {
         Request()->validate([
             'tipe' => 'required',
+            'rincian_tipe' => 'required',
             'nama_ksm' => 'required',
             'id_desa' => 'required',
             'id_kec' => 'required',
-            'komponen_ipal' => 'required',
-            'komponen_sr' => 'required',
-
-
+            'kondisi' => 'required',
+            'akses_tersedia' => 'required',
+            'akses_termanfaatkan' => 'required',
         ],
         [
             'tipe' => 'required',
+            'rincian_tipe' => 'required',
             'nama_ksm' => 'required',
             'id_desa' => 'required',
             'id_kec' => 'required',
-            'komponen_ipal' => 'required',
-            'komponen_sr' => 'required',
-
+            'kondisi' => 'required',
+            'akses_tersedia' => 'required',
+            'akses_termanfaatkan' => 'required',
         ],
     );
 
 
     $data = [        
         'tipe' => Request()->tipe,
+        'rincian_tipe' => Request()->rincian_tipe,
         'nama_ksm' => Request()->nama_ksm,
         'id_desa' => Request()->id_desa,
         'id_kec' => Request()->id_kec,
         'komponen_ipal' => Request()->komponen_ipal,
         'komponen_sr' => Request()->komponen_sr,
-
+        'komponen_ts' => Request()->komponen_ts,
+        'kondisi' => Request()->kondisi,
+        'akses_tersedia' => Request()->akses_tersedia,
+        'akses_termanfaatkan' => Request()->akses_termanfaatkan,
     ];
     
     $this->SpaldModel->InsertData($data);

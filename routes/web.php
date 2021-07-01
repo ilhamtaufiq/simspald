@@ -65,7 +65,7 @@ Route::get('/spald/delete/{id_desa}', [SpaldController::class, 'delete']);
 Route::post('/spald/update/{id_desa}', [SpaldController::class, 'update']);
 
 //rumah
-Route::get('/rumah', [DataRumahController::class, 'index'])->name('spald');
+Route::get('/rumah', [DataRumahController::class, 'index'])->name('rumah');
 Route::get('/rumah/add', [DataRumahController::class, 'add']);
 Route::post('/rumah/insert', [DataRumahController::class, 'insert']);
 Route::get('/rumah/edit/{id_desa}', [DataRumahController::class, 'edit']);
@@ -73,7 +73,7 @@ Route::get('/rumah/delete/{id_desa}', [DataRumahController::class, 'delete']);
 Route::post('/rumah/update/{id_desa}', [DataRumahController::class, 'update']);
 
 //koordinat
-Route::get('/koordinat', [KoordinatController::class, 'index'])->name('spald');
+Route::get('/koordinat', [KoordinatController::class, 'index'])->name('koordinat');
 Route::get('/koordinat/add', [KoordinatController::class, 'add']);
 Route::post('/koordinat/insert', [KoordinatController::class, 'insert']);
 Route::get('/koordinat/edit/{id_desa}', [KoordinatController::class, 'edit']);
@@ -81,7 +81,7 @@ Route::get('/koordinat/delete/{id_desa}', [KoordinatController::class, 'delete']
 Route::post('/koordinat/update/{id_desa}', [KoordinatController::class, 'update']);
 
 //koordinat
-Route::get('/target', [TargetCapaianController::class, 'index'])->name('spald');
+Route::get('/target', [TargetCapaianController::class, 'index'])->name('target');
 Route::get('/target/add', [TargetCapaianController::class, 'add']);
 Route::post('/target/insert', [TargetCapaianController::class, 'insert']);
 Route::get('/target/edit/{id_desa}', [TargetCapaianController::class, 'edit']);
@@ -89,7 +89,7 @@ Route::get('/target/delete/{id_desa}', [TargetCapaianController::class, 'delete'
 Route::post('/target/update/{id_desa}', [TargetCapaianController::class, 'update']);
 
 //realisasi
-Route::get('/realisasi', [RealisasiCapaianController::class, 'index'])->name('spald');
+Route::get('/realisasi', [RealisasiCapaianController::class, 'index'])->name('realisasi');
 Route::get('/realisasi/add', [RealisasiCapaianController::class, 'add']);
 Route::post('/realisasi/insert', [RealisasiCapaianController::class, 'insert']);
 Route::get('/realisasi/edit/{id_desa}', [RealisasiCapaianController::class, 'edit']);

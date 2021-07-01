@@ -5,7 +5,7 @@
       <div class="card-header">
         <h3 class="card-title">Daftar SPALD</h3>
         <div class="card-tools">
-          <a href="/spald/add" type="button" class="btn btn-sm btn-primary btn-flat">
+          <a href="/spald/input" type="button" class="btn btn-sm btn-primary btn-flat">
             <i class="fas fa-plus"></i>
             Tambah
           </a>

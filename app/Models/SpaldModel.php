@@ -26,6 +26,7 @@ class SpaldModel extends Model
     public function DeleteData($id_spald)
     {
         return DB::table('tbl_spald')
+        ->join('tbl_koordinat', 'tbl_koordinat.id_spald', '=', 'tbl_spald.id_spald')
         ->where('id_spald', $id_spald)
         ->delete();
     }
