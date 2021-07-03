@@ -6,10 +6,29 @@
 
 ![Alt text](screenshot/about.png?raw=true "Tentang")
 
+![Alt text](screenshot/koordinat.png?raw=true "Koordinat")
+
+# Built with:
+
+- Laravel [laravel](https://laravel.com)
+- AdminLTE [AdminLTE](https://adminlte.io)
+- TemplateMO [TemplateMO](https://themewagon.com/author/templatemo)
+- Leaflet [Leaflet](https://leafletjs.com/)
 
 # Changelog
 
 All notable changes to this project will be documented in this file.
+
+## [0.0.2] - 2021-07-04
+
+### Added
+
+- Mendapatkan Koordinat Lokasi
+
+
+### Changed
+
+- Minor Fixed Tambah Data
 
 ## [0.0.1] - 2021-06-29
 
@@ -29,10 +48,3 @@ All notable changes to this project will be documented in this file.
 
 - Minor fixed halaman depan
 - README.md
-
-### Built with:
-
-- Laravel [laravel](https://laravel.com)
-- AdminLTE [AdminLTE](https://adminlte.io)
-- TemplateMO [TemplateMO](https://themewagon.com/author/templatemo)
-- Leaflet [Leaflet](https://leafletjs.com/)

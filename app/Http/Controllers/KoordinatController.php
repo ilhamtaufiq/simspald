@@ -18,7 +18,7 @@ class KoordinatController extends Controller
         $spald = DB::table('tbl_spald')->get();
 
         $data = [
-            'title' => 'Tambah Daftar SPALD',
+            'title' => 'Tambah Data Koordinat SPALD',
             'spald' => $spald,
 
          ];
@@ -33,9 +33,9 @@ class KoordinatController extends Controller
             'long_' => 'required',
         ],
         [
-            'id_spald' => 'required',
-            'lat_' => 'required',
-            'long_' => 'required',
+            'id_spald.required' => "Pilih Pekerjaan SPALD",
+            'lat_.required' => "Format Tidak Sesuai",
+            'long_.required' => "Format Tidak Sesuai",
         ],
     );
     $data = [        
