@@ -76,9 +76,9 @@ Route::post('/rumah/update/{id_desa}', [DataRumahController::class, 'update']);
 Route::get('/koordinat', [KoordinatController::class, 'index'])->name('koordinat');
 Route::get('/koordinat/add', [KoordinatController::class, 'add']);
 Route::post('/koordinat/insert', [KoordinatController::class, 'insert']);
-Route::get('/koordinat/edit/{id_desa}', [KoordinatController::class, 'edit']);
-Route::get('/koordinat/delete/{id_desa}', [KoordinatController::class, 'delete']);
-Route::post('/koordinat/update/{id_desa}', [KoordinatController::class, 'update']);
+Route::get('/koordinat/edit/{id_koordinat}', [KoordinatController::class, 'edit']);
+Route::get('/koordinat/delete/{id_koordinat}', [KoordinatController::class, 'delete']);
+Route::post('/koordinat/update/{id_koordinat}', [KoordinatController::class, 'update']);
 
 //koordinat
 Route::get('/target', [TargetCapaianController::class, 'index'])->name('target');

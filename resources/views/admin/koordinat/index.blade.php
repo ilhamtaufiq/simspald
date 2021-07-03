@@ -5,7 +5,7 @@
       <div class="card-header">
         <h3 class="card-title">Data Koordinat</h3>
         <div class="card-tools">
-          <a href="/spald/add" type="button" class="btn btn-sm btn-primary btn-flat">
+          <a href="/koordinat/add" type="button" class="btn btn-sm btn-primary btn-flat">
             <i class="fas fa-plus"></i>
             Tambah
           </a>
@@ -22,8 +22,9 @@
             <thead>
                 <tr>
                     <th width=60px>No</th>
-                    <th>Pekerjaan</th>
-                    <th>Latitude Longitude</th>
+                    <th>Nama KSM</th>
+                    <th>Latitude</th>
+                    <th>Longitude</th>
                     <th width=100px class="text-center">Opsi</th>
                 </tr>
                 <tbody>
@@ -31,11 +32,12 @@
                     @foreach ($koordinat as $d)
                     <tr>
                         <td>{{ $no++ }}</td>
-                        <td>{{ $d->nama_ksm }}</td>
-                        <td>{{$d->latlong}}</td>
+                        <td>{{ $d->tipe }} - {{$d->rincian_tipe}} {{$d->nama_ksm}}</td>
+                        <td>{{$d->lat_}}</td>
+                        <td>{{$d->long_}}</td>
                         <td class="text-center">
-                            <a href="/desa/edit/{{$d->id_koordinat}}"><i class="fa fa-edit"></i></a>
-                            <button class="btn btn-sm btn-primary" href="/desa/delete/{{$d->id_koordinat}}" data-toggle="modal" data-target="#delete{{$d->id_koordinat}}"><i class="fa fa-trash "></i></button>
+                            <a href="/koordinat/edit/{{$d->id_koordinat}}"><i class="fa fa-edit"></i></a>
+                            <button class="btn btn-sm btn-primary" href="/koordinat/delete/{{$d->id_koordinat}}" data-toggle="modal" data-target="#delete{{$d->id_koordinat}}"><i class="fa fa-trash "></i></button>
                         </td>
                     </tr>    
                     @endforeach
@@ -52,7 +54,7 @@
   <div class="modal-dialog">
     <div class="modal-content bg-danger">
       <div class="modal-header">
-        <h4 class="modal-title">{{$d->nama_ksm}}</h4>
+        <h4 class="modal-title">Koordinat {{ $d->tipe }} - {{$d->rincian_tipe}} {{$d->nama_ksm}}</h4>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -62,7 +64,7 @@
       </div>
       <div class="modal-footer justify-content-between">
         <button type="button" class="btn btn-outline-light" data-dismiss="modal">Tidak</button>
-        <a href="/spald/delete/{{$d->id_koordinat}}" type="button" class="btn btn-outline-light">Ya</a>
+        <a href="/koordinat/delete/{{$d->id_koordinat}}" type="button" class="btn btn-outline-light">Ya</a>
       </div>
     </div>
   </div>
@@ -110,7 +112,7 @@ var peta4 = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}
    //mengambil koordinat
 
    @foreach($koordinat as $data)
-      L.marker([<?= $data->latlong ?>]).addTo(map);
+      L.marker([{{$data->lat_}}, {{$data->long_}}]).addTo(map);
    @endforeach
     $(function () {
       $("#example1").DataTable({

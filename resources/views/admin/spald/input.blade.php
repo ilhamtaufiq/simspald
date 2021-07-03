@@ -66,7 +66,7 @@
                       <option value="Rusak">Rusak</option>
                     </select>
                     <div class="text-danger">
-                        @error('tipe')
+                        @error('kondisi')
                             {{ $message }}
                         @enderror
                     </div>
@@ -114,7 +114,7 @@
                   <option value="Tangki Septik Komunal">Tangki Septik Komunal</option>
                 </select>
                 <div class="text-danger">
-                    @error('tipe')
+                    @error('rincian_tipe')
                         {{ $message }}
                     @enderror
                 </div>
@@ -151,7 +151,7 @@
                   <option value="IPAL Kombinasi MCK">IPAL Kombinasi MCK</option>
                 </select>
                 <div class="text-danger">
-                    @error('tipe')
+                    @error('rincian_tipe')
                         {{ $message }}
                     @enderror
                 </div>
