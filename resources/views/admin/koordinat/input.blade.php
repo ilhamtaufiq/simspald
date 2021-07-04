@@ -17,9 +17,9 @@
         </div>
     </div>
 </div>
-<form action="/koordinat/insert" method="POST">
-    @csrf
 <div class="col-md-12">
+    <form action="/koordinat/insert" method="POST">
+        @csrf
     <div class="card card-outline card-primary">
       <div class="card-header">
         <h3 class="card-title">Data Koordinat</h3>
@@ -45,7 +45,7 @@
             <div class="col-sm-6">
                 <div class="form-group">
                     <label>Latitude</label>
-                    <input type="text" name="lat_" class="form-control" placeholder="Latitude">
+                    <input type="text" id="lat_" name="lat_" class="form-control" placeholder="Latitude">
                     <div class="text-danger">
                         @error('lat_')
                             {{ $message }}
@@ -56,7 +56,7 @@
             <div class="col-sm-6">
                 <div class="form-group">
                     <label>Longitude</label>
-                    <input type="text" name="long_" class="form-control" placeholder="Latitude">
+                    <input type="text" id="long_" name="long_" class="form-control" placeholder="Latitude">
                     <div class="text-danger">
                         @error('long_')
                             {{ $message }}
@@ -67,12 +67,12 @@
             <div class="col-sm-12">
                 <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Simpan</button>
                 <button type="submit" class="btn btn-warning float-right">Batal</button>
-              </div>
+            </div>
         </div>
       </div>
     </div>
+    </form>
 </div>
-</form>
 <script>
 var peta1 = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
 		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
@@ -129,6 +129,9 @@ var peta4 = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}
 			L.marker(e.latlng)
             .addTo(map)
             .bindPopup("Latitude : " + e.latlng.lat + ", <br /> Longitude :" + e.latlng.lng);
+            document.getElementById("lat_").value = e.latlng.lat;
+            document.getElementById("long_").value = e.latlng.lng;
+
 		}
 
 		function addStatus (message, className) {
@@ -147,6 +150,17 @@ var peta4 = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}
 			maxWait: 10000,
 			desiredAccuracy: 20
 		});
+        var popup = L.popup();
 
+        function onMapClick(e) {
+            popup
+                .setLatLng(e.latlng)
+                .setContent("Latitude : " + e.latlng.lat + ", <br /> Longitude :" + e.latlng.lng)
+                .openOn(map);
+                document.getElementById("lat_").value = e.latlng.lat;
+                document.getElementById("long_").value = e.latlng.lng;
+
+        }
+        map.on('click', onMapClick);
 </script>
 @endsection
