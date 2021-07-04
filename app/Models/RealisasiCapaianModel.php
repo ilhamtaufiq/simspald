@@ -15,4 +15,32 @@ class RealisasiCapaianModel extends Model
        ->join('tbl_desa', 'tbl_desa.id_desa', '=', 'tbl_r_capaian.id_desa')
        ->get();
     }
+
+    public function InsertData($data)
+    {
+        DB::table('tbl_r_capaian')
+        ->insert($data);
+    }
+
+    public function DetailData($id_capaian)
+    {
+        return DB::table('tbl_r_capaian')
+        ->join('tbl_kecamatan', 'tbl_kecamatan.id_kec', '=', 'tbl_r_capaian.id_kec')
+        ->join('tbl_desa', 'tbl_desa.id_desa', '=', 'tbl_r_capaian.id_desa')
+        ->where('id_capaian', $id_capaian)->first();
+    }
+
+    public function UpdateData($id_capaian, $data)
+    {
+        return DB::table('tbl_r_capaian')
+        ->where('id_capaian', $id_capaian)
+        ->update($data);
+    }
+
+    public function DeleteData($id_capaian)
+    {
+        return DB::table('tbl_r_capaian')
+        ->where('id_capaian', $id_capaian)
+        ->delete();
+    }
 }

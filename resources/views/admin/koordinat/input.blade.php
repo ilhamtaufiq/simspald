@@ -29,7 +29,7 @@
             <div class="col-sm-6">
                 <div class="form-group">
                 <label>Tipe</label>
-                    <select id="id_spald" name="id_spald" class="form-control">
+                    <select id="id_spald" class="form-control select2bs4" name="id_spald" class="form-control">
                         <option value="">Pilih SPALD</option>
                         @foreach ($spald as $s)
                             <option value="{{$s->id_spald}}">{{$s->nama_ksm}}</option>
@@ -74,6 +74,15 @@
     </form>
 </div>
 <script>
+$(function () {
+    //Initialize Select2 Elements
+    $('.select2').select2()
+
+    //Initialize Select2 Elements
+    $('.select2bs4').select2({
+      theme: 'bootstrap4'
+    })
+})
 var peta1 = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
 		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
 			'<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +

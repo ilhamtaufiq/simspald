@@ -36,7 +36,7 @@
                         <td>{{ $d->n_desa }}</td>
                         <td>{{$d->luas}}</td>
                         <td>{{$d->jumlah_penduduk}}</td>
-                        <td>"number_format($d->jumlah_penduduk/$d->luas,2)"</td>
+                        <td>{{number_format($d->jumlah_penduduk/$d->luas,2)}}"</td>
                         <td class="text-center">
                             <a href="/desa/edit/{{$d->id_desa}}"><i class="fa fa-edit"></i></a>
                             <button class="btn btn-sm btn-primary" href="/desa/delete/{{$d->id_desa}}" data-toggle="modal" data-target="#delete{{$d->id_desa}}"><i class="fa fa-trash "></i></button>

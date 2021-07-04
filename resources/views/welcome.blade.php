@@ -482,7 +482,7 @@ https://templatemo.com/tm-563-seo-dream
    //mengambil koordinat
 
    @foreach($koordinat as $data)
-      L.marker([<?= $data->latlong ?>]).addTo(map);
+      L.marker([{{$data->lat_}},{{$data->long_}}]).addTo(map);
   @endforeach
   </script>
 

@@ -5,7 +5,7 @@
       <div class="card-header">
         <h3 class="card-title">Realisasi Capaian</h3>
         <div class="card-tools">
-          <a href="/spald/add" type="button" class="btn btn-sm btn-primary btn-flat">
+          <a href="/realisasi/add" type="button" class="btn btn-sm btn-primary btn-flat">
             <i class="fas fa-plus"></i>
             Tambah
           </a>
@@ -36,8 +36,8 @@
                         <td>{{$d->n_kec}}</td>
                         <td>{{$d->tanpa_akses}}</td>
                         <td class="text-center">
-                            <a href="/desa/edit/{{$d->id_capaian}}"><i class="fa fa-edit"></i></a>
-                            <button class="btn btn-sm btn-primary" href="/desa/delete/{{$d->id_capaian}}" data-toggle="modal" data-target="#delete{{$d->id_capaian}}"><i class="fa fa-trash "></i></button>
+                            <a href="/realisasi/edit/{{$d->id_capaian}}"><i class="fa fa-edit"></i></a>
+                            <button class="btn btn-sm btn-primary" href="/realisasi/delete/{{$d->id_capaian}}" data-toggle="modal" data-target="#delete{{$d->id_capaian}}"><i class="fa fa-trash "></i></button>
                         </td>
                     </tr>    
                     @endforeach
@@ -52,7 +52,7 @@
   <div class="modal-dialog">
     <div class="modal-content bg-danger">
       <div class="modal-header">
-        <h4 class="modal-title">{{$d->id_capaian}}</h4>
+        <h4 class="modal-title">Realisasi Capaian Desa {{$d->n_desa}} Kecamatan {{$d->n_kec}}</h4>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -62,7 +62,7 @@
       </div>
       <div class="modal-footer justify-content-between">
         <button type="button" class="btn btn-outline-light" data-dismiss="modal">Tidak</button>
-        <a href="/spald/delete/{{$d->id_capaian}}" type="button" class="btn btn-outline-light">Ya</a>
+        <a href="/realisasi/delete/{{$d->id_capaian}}" type="button" class="btn btn-outline-light">Ya</a>
       </div>
     </div>
   </div>

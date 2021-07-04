@@ -84,15 +84,15 @@ Route::post('/koordinat/update/{id_koordinat}', [KoordinatController::class, 'up
 Route::get('/target', [TargetCapaianController::class, 'index'])->name('target');
 Route::get('/target/add', [TargetCapaianController::class, 'add']);
 Route::post('/target/insert', [TargetCapaianController::class, 'insert']);
-Route::get('/target/edit/{id_desa}', [TargetCapaianController::class, 'edit']);
-Route::get('/target/delete/{id_desa}', [TargetCapaianController::class, 'delete']);
-Route::post('/target/update/{id_desa}', [TargetCapaianController::class, 'update']);
+Route::get('/target/edit/{id_capaian}', [TargetCapaianController::class, 'edit']);
+Route::get('/target/delete/{id_capaian}', [TargetCapaianController::class, 'delete']);
+Route::post('/target/update/{id_capaian}', [TargetCapaianController::class, 'update']);
 
 //realisasi
 Route::get('/realisasi', [RealisasiCapaianController::class, 'index'])->name('realisasi');
 Route::get('/realisasi/add', [RealisasiCapaianController::class, 'add']);
 Route::post('/realisasi/insert', [RealisasiCapaianController::class, 'insert']);
-Route::get('/realisasi/edit/{id_desa}', [RealisasiCapaianController::class, 'edit']);
-Route::get('/realisasi/delete/{id_desa}', [RealisasiCapaianController::class, 'delete']);
-Route::post('/realisasi/update/{id_desa}', [RealisasiCapaianController::class, 'update']);
+Route::get('/realisasi/edit/{id_capaian}', [RealisasiCapaianController::class, 'edit']);
+Route::get('/realisasi/delete/{id_capaian}', [RealisasiCapaianController::class, 'delete']);
+Route::post('/realisasi/update/{id_capaian}', [RealisasiCapaianController::class, 'update']);
 
