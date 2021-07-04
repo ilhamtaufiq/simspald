@@ -99,7 +99,7 @@ class SpaldController extends Controller
         ];
         return view('admin.spald.edit', $data);
     }
-
+    
     public function update($id_spald )
     {
         Request()->validate([

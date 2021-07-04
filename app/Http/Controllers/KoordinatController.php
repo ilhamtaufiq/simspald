@@ -13,6 +13,17 @@ class KoordinatController extends Controller
         $this->KoordinatModel = new KoordinatModel();
         $this->middleware('auth');
     }
+
+    public function index()
+    {
+        $data = [
+            'title' => 'Koordinat',
+            'koordinat' => $this->KoordinatModel->AllData(),
+
+        ];
+        return view('admin.koordinat.index', $data);
+    }
+    
     public function add(Request $request)
     {
         $spald = DB::table('tbl_spald')->get();
@@ -56,7 +67,7 @@ class KoordinatController extends Controller
         $data = [
             
             'title' => 'Edit Data Koordinat SPALD',
-            'spald' => $this->KoordinatModel->DetailData($id_koordinat),
+            'koordinat' => $this->KoordinatModel->DetailData($id_koordinat),
             'spald' => $spald,
         ];
         return view('admin.koordinat.edit', $data);
@@ -88,15 +99,5 @@ class KoordinatController extends Controller
     {
         $this->KoordinatModel->DeleteData($id_koordinat);
         return redirect()->route('koordinat')->with('pesan', 'Data Koordinat SPALD Berhasil Dihapus ');
-    }
-
-    public function index()
-    {
-        $data = [
-            'title' => 'Koordinat',
-            'koordinat' => $this->KoordinatModel->AllData(),
-
-        ];
-        return view('admin.koordinat.index', $data);
     }
 }

@@ -5,7 +5,7 @@
       <div class="card-header">
         <h3 class="card-title">Data Rumah</h3>
         <div class="card-tools">
-          <a href="/spald/add" type="button" class="btn btn-sm btn-primary btn-flat">
+          <a href="/rumah/add" type="button" class="btn btn-sm btn-primary btn-flat">
             <i class="fas fa-plus"></i>
             Tambah
           </a>
@@ -40,8 +40,8 @@
                         <td>{{$d->n_kk}}</td>
                         <td>{{$d->j_anggota}}</td>
                         <td class="text-center">
-                            <a href="/desa/edit/{{$d->id_rumah}}"><i class="fa fa-edit"></i></a>
-                            <button class="btn btn-sm btn-primary" href="/desa/delete/{{$d->id_rumah}}" data-toggle="modal" data-target="#delete{{$d->id_rumah}}"><i class="fa fa-trash "></i></button>
+                            <a href="/rumah/edit/{{$d->id_rumah}}"><i class="fa fa-edit"></i></a>
+                            <button class="btn btn-sm btn-primary" href="/rumah/delete/{{$d->id_rumah}}" data-toggle="modal" data-target="#delete{{$d->id_rumah}}"><i class="fa fa-trash "></i></button>
                         </td>
                     </tr>    
                     @endforeach
@@ -66,7 +66,7 @@
       </div>
       <div class="modal-footer justify-content-between">
         <button type="button" class="btn btn-outline-light" data-dismiss="modal">Tidak</button>
-        <a href="/spald/delete/{{$d->id_rumah}}" type="button" class="btn btn-outline-light">Ya</a>
+        <a href="/rumah/delete/{{$d->id_rumah}}" type="button" class="btn btn-outline-light">Ya</a>
       </div>
     </div>
   </div>

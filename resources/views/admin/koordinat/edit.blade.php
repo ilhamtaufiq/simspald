@@ -18,7 +18,7 @@
     </div>
 </div>
 <div class="col-md-12">
-    <form action="/koordinat/insert" method="POST">
+    <form action="/koordinat/update/{{$koordinat->id_koordinat}}" method="POST">
         @csrf
     <div class="card card-outline card-primary">
       <div class="card-header">
@@ -30,7 +30,7 @@
                 <div class="form-group">
                 <label>Tipe</label>
                     <select id="id_spald" name="id_spald" class="form-control">
-                        <option value="">Pilih SPALD</option>
+                        <option value="{{$koordinat->id_spald}}">{{$koordinat->nama_ksm}}</option>
                         @foreach ($spald as $s)
                             <option value="{{$s->id_spald}}">{{$s->nama_ksm}}</option>
                         @endforeach
@@ -45,7 +45,7 @@
             <div class="col-sm-6">
                 <div class="form-group">
                     <label>Latitude</label>
-                    <input type="text" id="lat_" name="lat_" class="form-control" placeholder="Latitude">
+                    <input value="{{$koordinat->lat_}}" type="text" id="lat_" name="lat_" class="form-control" placeholder="Latitude">
                     <div class="text-danger">
                         @error('lat_')
                             {{ $message }}
@@ -56,7 +56,7 @@
             <div class="col-sm-6">
                 <div class="form-group">
                     <label>Longitude</label>
-                    <input type="text" id="long_" name="long_" class="form-control" placeholder="Latitude">
+                    <input value="{{$koordinat->long_}}" type="text" id="long_" name="long_" class="form-control" placeholder="Latitude">
                     <div class="text-danger">
                         @error('long_')
                             {{ $message }}
