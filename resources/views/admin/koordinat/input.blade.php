@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.dark')
 @section('content')
 <div class="col-md-12">
     <div class="card card-outline card-primary">

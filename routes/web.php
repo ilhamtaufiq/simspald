@@ -9,10 +9,7 @@ use App\Http\Controllers\KoordinatController;
 use App\Http\Controllers\TargetCapaianController;
 use App\Http\Controllers\RealisasiCapaianController;
 use App\Http\Controllers\WelcomeController;
-
-
-
-
+use App\Http\Controllers\DashboardController;
 
 
 
@@ -37,9 +34,9 @@ Route::get('/', [App\Http\Controllers\WelcomeController::class, 'index'])->name(
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\DashboardController::class, 'index'])->name('home');
 
-//kecamatan
+//Kecamatan
 Route::get('/kecamatan', [KecamatanController::class, 'index'])->name('kecamatan');
 Route::get('/kecamatan/add', [KecamatanController::class, 'add']);
 Route::post('/kecamatan/insert', [KecamatanController::class, 'insert']);
@@ -47,7 +44,7 @@ Route::get('/kecamatan/edit/{id_kec}', [KecamatanController::class, 'edit']);
 Route::get('/kecamatan/delete/{id_kec}', [KecamatanController::class, 'delete']);
 Route::post('/kecamatan/update/{id_kec}', [KecamatanController::class, 'update']);
 
-//desa
+//Desa
 Route::get('/desa/{id_kec}', [DesaController::class, 'index'])->name('desa');
 Route::get('/desa/add', [DesaController::class, 'add']);
 Route::post('/desa/insert', [DesaController::class, 'insert']);
@@ -55,7 +52,7 @@ Route::get('/desa/edit/{id_desa}', [DesaController::class, 'edit']);
 Route::get('/desa/delete/{id_desa}', [DesaController::class, 'delete']);
 Route::post('/desa/update/{id_desa}', [DesaController::class, 'update']);
 
-//spald
+//SPALD
 Route::get('/spald', [SpaldController::class, 'index'])->name('spald');
 Route::get('/spald/input', [SpaldController::class, 'add']);
 Route::post('/spald/insert', [SpaldController::class, 'insert']);
@@ -64,7 +61,7 @@ Route::get('/spald/edit/{id_spald}', [SpaldController::class, 'edit']);
 Route::get('/spald/delete/{id_spald}', [SpaldController::class, 'delete']);
 Route::post('/spald/update/{id_spald}', [SpaldController::class, 'update']);
 
-//rumah
+//Data Rumah
 Route::get('/rumah', [DataRumahController::class, 'index'])->name('rumah');
 Route::get('/rumah/add', [DataRumahController::class, 'add']);
 Route::post('/rumah/insert', [DataRumahController::class, 'insert']);
@@ -72,7 +69,7 @@ Route::get('/rumah/edit/{id_desa}', [DataRumahController::class, 'edit']);
 Route::get('/rumah/delete/{id_desa}', [DataRumahController::class, 'delete']);
 Route::post('/rumah/update/{id_desa}', [DataRumahController::class, 'update']);
 
-//koordinat
+//Data Koordinat
 Route::get('/koordinat', [KoordinatController::class, 'index'])->name('koordinat');
 Route::get('/koordinat/add', [KoordinatController::class, 'add']);
 Route::post('/koordinat/insert', [KoordinatController::class, 'insert']);
@@ -80,7 +77,7 @@ Route::get('/koordinat/edit/{id_koordinat}', [KoordinatController::class, 'edit'
 Route::get('/koordinat/delete/{id_koordinat}', [KoordinatController::class, 'delete']);
 Route::post('/koordinat/update/{id_koordinat}', [KoordinatController::class, 'update']);
 
-//koordinat
+//Target Capaian
 Route::get('/target', [TargetCapaianController::class, 'index'])->name('target');
 Route::get('/target/add', [TargetCapaianController::class, 'add']);
 Route::post('/target/insert', [TargetCapaianController::class, 'insert']);
@@ -88,7 +85,7 @@ Route::get('/target/edit/{id_capaian}', [TargetCapaianController::class, 'edit']
 Route::get('/target/delete/{id_capaian}', [TargetCapaianController::class, 'delete']);
 Route::post('/target/update/{id_capaian}', [TargetCapaianController::class, 'update']);
 
-//realisasi
+//Target Realisasi
 Route::get('/realisasi', [RealisasiCapaianController::class, 'index'])->name('realisasi');
 Route::get('/realisasi/add', [RealisasiCapaianController::class, 'add']);
 Route::post('/realisasi/insert', [RealisasiCapaianController::class, 'insert']);

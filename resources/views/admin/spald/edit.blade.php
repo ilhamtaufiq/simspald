@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.dark')
 @section('content')
 <form action="/spald/update/{{$spald->id_spald}}" method="POST">
   @csrf

@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.dark')
 @section('content')
 <form action="/realisasi/insert" method="POST">
   @csrf

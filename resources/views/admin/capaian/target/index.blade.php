@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.dark')
 @section('content')
 <div class="col-md-12">
     <div class="card card-outline card-primary">
@@ -12,12 +12,6 @@
         </div>
       </div>
       <div class="card-body">
-        @if (session('pesan'))
-        <div class="alert alert-success alert-dimissable ">
-            <button type="button" class="close" data-dimiss="alert" aria-hidden="true">&times;</button>
-            <h5><i class="icon fas fa-check"></i>{{ session('pesan') }}</h5>
-        </div>
-        @endif
         <table id="example1" class="table table-bordered table-striped">
             <thead>
                 <tr>

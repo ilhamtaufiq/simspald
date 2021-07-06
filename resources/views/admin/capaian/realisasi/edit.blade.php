@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.dark')
 @section('content')
 <form action="/realisasi/update/{{$realisasi->id_capaian}}" method="POST">
   @csrf

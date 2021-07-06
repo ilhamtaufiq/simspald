@@ -49,23 +49,25 @@ class SpaldController extends Controller
     {
         Request()->validate([
             'tipe' => 'required',
-            'rincian_tipe' => 'required',
             'nama_ksm' => 'required',
             'id_desa' => 'required',
             'id_kec' => 'required',
             'kondisi' => 'required',
             'akses_tersedia' => 'required',
             'akses_termanfaatkan' => 'required',
+            'pagu' => 'required',
+
         ],
         [
             'tipe' => 'required',
-            'rincian_tipe' => 'required',
             'nama_ksm' => 'required',
             'id_desa' => 'required',
             'id_kec' => 'required',
             'kondisi' => 'required',
             'akses_tersedia' => 'required',
             'akses_termanfaatkan' => 'required',
+            'pagu' => 'required',
+
         ],
     );
     $data = [        
@@ -80,6 +82,10 @@ class SpaldController extends Controller
         'kondisi' => Request()->kondisi,
         'akses_tersedia' => Request()->akses_tersedia,
         'akses_termanfaatkan' => Request()->akses_termanfaatkan,
+        'tahun' => Request()->tahun,
+        'pagu' => Request()->pagu,
+
+
     ];
     
     $this->SpaldModel->InsertData($data);
@@ -104,23 +110,27 @@ class SpaldController extends Controller
     {
         Request()->validate([
             'tipe' => 'required',
-            'rincian_tipe' => 'required',
             'nama_ksm' => 'required',
             'id_desa' => 'required',
             'id_kec' => 'required',
             'kondisi' => 'required',
             'akses_tersedia' => 'required',
             'akses_termanfaatkan' => 'required',
+            'tahun' => 'required',
+            'pagu' => 'required',
+
         ],
         [
             'tipe' => 'required',
-            'rincian_tipe' => 'required',
             'nama_ksm' => 'required',
             'id_desa' => 'required',
             'id_kec' => 'required',
             'kondisi' => 'required',
             'akses_tersedia' => 'required',
             'akses_termanfaatkan' => 'required',
+            'tahun' => 'required',
+            'pagu' => 'required',
+
         ],
     );
 
@@ -136,6 +146,10 @@ class SpaldController extends Controller
             'kondisi' => Request()->kondisi,
             'akses_tersedia' => Request()->akses_tersedia,
             'akses_termanfaatkan' => Request()->akses_termanfaatkan,
+            'tahun' => Request()->tahun,
+            'pagu' => Request()->pagu,
+
+
         ];
         $this->SpaldModel->UpdateData($id_spald,$data);
         return redirect()->route('spald')->with('pesan', 'Data SPALD Berhasil Diubah ');   

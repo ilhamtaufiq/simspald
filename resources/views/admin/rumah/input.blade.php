@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.dark')
 @section('content')
 <form action="/rumah/insert" method="POST">
     @csrf
@@ -158,6 +158,28 @@
                         <input type="number" name="cubluk_perdesaan" class="form-control" placeholder="Cubluk Perdesaan">
                         <div class="text-danger">
                         @error('cubluk_perdesaan')
+                            {{ $message }}
+                        @enderror
+                        </div>
+                    </div>
+                </div>
+                <div class="div col-sm-6">
+                    <div class="form-group">
+                        <label>Akses Layak Tangki Septik Individual</label>
+                        <input type="number" name="al_ts_individual" class="form-control" placeholder="Akses Layak Tangki Septik Individual">
+                        <div class="text-danger">
+                        @error('al_ts_individual')
+                            {{ $message }}
+                        @enderror
+                        </div>
+                    </div>
+                </div>
+                <div class="div col-sm-6">
+                    <div class="form-group">
+                        <label>Akses Layak Tangki Septik Komunal</label>
+                        <input type="number" name="al_ts_komunal" class="form-control" placeholder="Akses Layak Tangki Septik Komunal">
+                        <div class="text-danger">
+                        @error('al_ts_komunal')
                             {{ $message }}
                         @enderror
                         </div>
