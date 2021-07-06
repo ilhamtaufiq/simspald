@@ -1,6 +1,6 @@
 @extends('layouts.dark')
 @section('content')
-<form action="/rumah/insert" method="POST">
+<form action="/rumah/update/{{$rumah->id_rumah}}" method="POST">
     @csrf
 <div class="col-md-12">
     <div class="card card-outline card-primary">
@@ -67,7 +67,7 @@
                 <div class="div col-sm-6">
                     <div class="form-group">
                         <label>NIK</label>
-                        <input value="{{$rumah->n_nik}}" type="number" name="n_nik" class="form-control" placeholder="Nomor NIK">
+                        <input value="{{decrypt($rumah->n_nik)}}" type="number" name="n_nik" class="form-control" placeholder="Nomor NIK">
                         <div class="text-danger">
                         @error('n_nik')
                             {{ $message }}

@@ -20,22 +20,36 @@
                     <th>Kecamatan</th>
                     <th>RT/RW</th>
                     <th>Kepala Keluarga</th>
-                    <th>Jumlah Anggota Keluarga</th>
+                    @role('Master')
+                    <th>NIK Kepala Keluarga</th>
+                    @else
+                    <th>NIK Kepala Keluarga</th>
+                    @endrole
                     <th width=100px class="text-center">Opsi</th>
                 </tr>
                 <tbody>
                     <?php $no=1; ?>
-                    @foreach ($rumah as $d)
+                    @foreach ($rumah as $key=>$value)
                     <tr>
                         <td>{{ $no++ }}</td>
-                        <td>{{ $d->n_desa }}</td>
-                        <td>{{$d->n_kec}}</td>
-                        <td>{{$d->rt}}/{{$d->rw}}</td>
-                        <td>{{$d->n_kk}}</td>
-                        <td>{{$d->j_anggota}}</td>
+                        <td>{{ $value->n_desa }}</td>
+                        <td>{{$value->n_kec}}</td>
+                        <td>{{$value->rt}}/{{$value->rw}}</td>
+                        <td>{{($value->n_kk)}}</td>
+                        @role('Master')
+                        <td>{{decrypt($value->n_nik)}}</td>
+                        @else
+                        <td>@php
+                              $phone = decrypt($value->n_nik);
+                              $result = substr($phone, 0, 2);
+                              $result .= '******';
+                              $result .= substr($phone, -2);
+                              echo $result;                       
+                        @endphp</td>
+                        @endrole
                         <td class="text-center">
-                            <a href="/rumah/edit/{{$d->id_rumah}}"><i class="fa fa-edit"></i></a>
-                            <button class="btn btn-sm btn-primary" href="/rumah/delete/{{$d->id_rumah}}" data-toggle="modal" data-target="#delete{{$d->id_rumah}}"><i class="fa fa-trash "></i></button>
+                            <a href="/rumah/edit/{{$value->id_rumah}}"><i class="fa fa-edit"></i></a>
+                            <button class="btn btn-sm btn-primary" href="/rumah/delete/{{$value->id_rumah}}" data-toggle="modal" data-target="#delete{{$value->id_rumah}}"><i class="fa fa-trash "></i></button>
                         </td>
                     </tr>    
                     @endforeach

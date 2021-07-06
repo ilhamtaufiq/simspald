@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\DataRumahModel;
 use DB;
-
+use Crypt;
 class DataRumahController extends Controller
 {
     public function __construct()
@@ -15,10 +15,11 @@ class DataRumahController extends Controller
     }
     public function index()
     {
+        
         $data = [
             'title' => 'Data Rumah',
             'rumah' => $this->DataRumahModel->AllData(),
-
+            
         ];
         return view('admin.rumah.index', $data);
     }
@@ -30,7 +31,6 @@ class DataRumahController extends Controller
         $data = [
             'title' => 'Tambah Daftar Rumah',
             'kecamatan' => $kec,
-
          ];
         return view('admin.rumah.input', $data);
     }
@@ -50,7 +50,7 @@ class DataRumahController extends Controller
             'rw' => 'required',
             'rt' => 'required',
             'n_kk' => 'required',
-            'n_nik' => 'required',
+            'n_nik' => ['required', 'regex:/^\\d{6}([04][1-9]|[1256][0-9]|[37][01])(0[1-9]|1[0-2])\d{2}\d{4}$/'],
             'j_anggota' => 'required',
             'klasifikasi' => 'required',
             'risiko_sanitasi' => 'required',
@@ -66,7 +66,7 @@ class DataRumahController extends Controller
             'rw' => 'required',
             'rt' => 'required',
             'n_kk' => 'required',
-            'n_nik' => 'required',
+            'n_nik.required' => 'Format NIK Salah!',
             'j_anggota' => 'required',
             'klasifikasi' => 'required',
             'risiko_sanitasi' => 'required',
@@ -77,13 +77,16 @@ class DataRumahController extends Controller
             'cubluk_perdesaan' => 'required',
         ],
     );
+    $nik = Request()->n_nik;
+    $enkripsi= Crypt::encrypt($nik);
+
     $data = [        
         'id_desa' => Request()->id_desa,
         'id_kec' => Request()->id_kec,
         'rw' => Request()->rw,
         'rt' => Request()->rt,
         'n_kk' => Request()->n_kk,
-        'n_nik' => Request()->n_nik,
+        'n_nik' => $enkripsi,
         'j_anggota' => Request()->j_anggota,
         'klasifikasi' => Request()->klasifikasi,
         'risiko_sanitasi' => Request()->risiko_sanitasi,
@@ -120,7 +123,7 @@ class DataRumahController extends Controller
             'rw' => 'required',
             'rt' => 'required',
             'n_kk' => 'required',
-            'n_nik' => 'required',
+            'n_nik' => ['required', 'regex:/^\\d{6}([04][1-9]|[1256][0-9]|[37][01])(0[1-9]|1[0-2])\d{2}\d{4}$/'],
             'j_anggota' => 'required',
             'klasifikasi' => 'required',
             'risiko_sanitasi' => 'required',
@@ -136,7 +139,7 @@ class DataRumahController extends Controller
             'rw' => 'required',
             'rt' => 'required',
             'n_kk' => 'required',
-            'n_nik' => 'required',
+            'n_nik.required' => 'Format NIK Salah!',
             'j_anggota' => 'required',
             'klasifikasi' => 'required',
             'risiko_sanitasi' => 'required',
@@ -147,13 +150,16 @@ class DataRumahController extends Controller
             'cubluk_perdesaan' => 'required',
         ],
     );
+    $nik = Request()->n_nik;
+    $enkripsi= Crypt::encrypt($nik);
+
     $data = [        
         'id_desa' => Request()->id_desa,
         'id_kec' => Request()->id_kec,
         'rw' => Request()->rw,
         'rt' => Request()->rt,
         'n_kk' => Request()->n_kk,
-        'n_nik' => Request()->n_nik,
+        'n_nik' => $enkripsi,
         'j_anggota' => Request()->j_anggota,
         'klasifikasi' => Request()->klasifikasi,
         'risiko_sanitasi' => Request()->risiko_sanitasi,

@@ -10,6 +10,10 @@ use App\Http\Controllers\TargetCapaianController;
 use App\Http\Controllers\RealisasiCapaianController;
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\RoleController;
+
+
 
 
 
@@ -46,7 +50,7 @@ Route::post('/kecamatan/update/{id_kec}', [KecamatanController::class, 'update']
 
 //Desa
 Route::get('/desa/{id_kec}', [DesaController::class, 'index'])->name('desa');
-Route::get('/desa/add', [DesaController::class, 'add']);
+Route::get('/desa/add/{id_kec}', [DesaController::class, 'add']);
 Route::post('/desa/insert', [DesaController::class, 'insert']);
 Route::get('/desa/edit/{id_desa}', [DesaController::class, 'edit']);
 Route::get('/desa/delete/{id_desa}', [DesaController::class, 'delete']);
@@ -93,3 +97,7 @@ Route::get('/realisasi/edit/{id_capaian}', [RealisasiCapaianController::class, '
 Route::get('/realisasi/delete/{id_capaian}', [RealisasiCapaianController::class, 'delete']);
 Route::post('/realisasi/update/{id_capaian}', [RealisasiCapaianController::class, 'update']);
 
+Route::group(['middleware' => ['auth']], function() {
+    Route::resource('roles', RoleController::class);
+    Route::resource('users', UserController::class);
+});

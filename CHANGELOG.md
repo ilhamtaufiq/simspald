@@ -9,7 +9,7 @@ All notable changes to this project will be documented in this file.
 
 ### Changed
 - Currency Format
-- Alert
+- Alert 
 
 ## [v0.2-alpha] - 2021-07-04
 

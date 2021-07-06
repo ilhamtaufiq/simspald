@@ -19,4 +19,10 @@ class KecamatanModel extends Model
         ->where('id_kec', $id_kec)
         ->delete();
     }
+    public function DetailData($id_kec)
+    {
+        return DB::table('tbl_kecamatan')
+        ->where('id_kec', $id_kec)
+        ->delete();
+    }
 }
