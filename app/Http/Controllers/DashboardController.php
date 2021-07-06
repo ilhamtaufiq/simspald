@@ -19,8 +19,9 @@ class DashboardController extends Controller
         $pagu = DB::table('tbl_spald')
         ->selectRaw("REPLACE(REPLACE(REPLACE(REPLACE(pagu, 'R', '') , 'p', '') , '.', '') , ',00', '') as total ")
         ->get();
-        $chart_akses = DB::table('tbl_spald')->get();
         $p = $pagu->sum('total');
+        $chart_akses = DB::table('tbl_spald')->get();
+
 
         $jiwa = DB::table('tbl_rumah')->sum('j_anggota');
         $data = [
