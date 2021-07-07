@@ -162,7 +162,7 @@ https://templatemo.com/tm-563-seo-dream
             </div>
           </div>
           <p>Sistem Pengelolaan Air Limbah Domestik yang selanjutnya disingkat SPALD adalah serangkaian kegiatan pengelolaan air limbah domestik dalam satu kesatuan dengan prasarana dan sarana pengelolaan air limbah domestik.</p>
-          <div class="main-green-button"><a href="#">Discover company</a></div>
+          <div class="main-green-button"><a href="#">Lihat Selengkapnya</a></div>
         </div>
       </div>
     </div>

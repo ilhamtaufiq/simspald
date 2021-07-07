@@ -222,18 +222,18 @@
             <!-- /.col -->
             <div class="col-sm-3 col-6">
               <div class="description-block border-right">
-                <span class="description-percentage text-success"><i class="fas fa-caret-up"></i> 20%</span>
-                <h5 class="description-header">$24,813.53</h5>
-                <span class="description-text">TOTAL PROFIT</span>
+                <span class="description-percentage text-success"><i class="fas fa-caret-up"></i> </span>
+                <h5 class="description-header"> </h5>
+                <span class="description-text"> </span>
               </div>
               <!-- /.description-block -->
             </div>
             <!-- /.col -->
             <div class="col-sm-3 col-6">
               <div class="description-block">
-                <span class="description-percentage text-danger"><i class="fas fa-caret-down"></i> 18%</span>
-                <h5 class="description-header">1200</h5>
-                <span class="description-text">GOAL COMPLETIONS</span>
+                <span class="description-percentage text-danger"><i class="fas fa-caret-down"></i> </span>
+                <h5 class="description-header"> </h5>
+                <span class="description-text"> </span>
               </div>
               <!-- /.description-block -->
             </div>

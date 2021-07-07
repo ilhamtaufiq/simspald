@@ -6,7 +6,7 @@
 
 ![Alt text](screenshot/about.png?raw=true "Tentang")
 
-![Alt text](screenshot/koordinat.png?raw=true "Koordinat")
+![Alt text](screenshot/dashboard.png?raw=true "Dashboard")
 
 # Built with:
 
