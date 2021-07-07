@@ -55,7 +55,9 @@ class SpaldController extends Controller
             'kondisi' => 'required',
             'akses_tersedia' => 'required',
             'akses_termanfaatkan' => 'required',
+            'tahun' => 'required',
             'pagu' => 'required',
+
 
         ],
         [
@@ -66,13 +68,15 @@ class SpaldController extends Controller
             'kondisi' => 'required',
             'akses_tersedia' => 'required',
             'akses_termanfaatkan' => 'required',
+            'tahun' => 'required',
             'pagu' => 'required',
 
         ],
     );
     $data = [        
         'tipe' => Request()->tipe,
-        'rincian_tipe' => Request()->rincian_tipe,
+        'rincian_tipe_spalds' => Request()->rincian_tipe_spalds,
+        'rincian_tipe_spaldt' => Request()->rincian_tipe_spaldt,
         'nama_ksm' => Request()->nama_ksm,
         'id_desa' => Request()->id_desa,
         'id_kec' => Request()->id_kec,
@@ -136,7 +140,8 @@ class SpaldController extends Controller
 
         $data = [        
             'tipe' => Request()->tipe,
-            'rincian_tipe' => Request()->rincian_tipe,
+            'rincian_tipe_spalds' => Request()->rincian_tipe_spalds,
+            'rincian_tipe_spaldt' => Request()->rincian_tipe_spaldt,
             'nama_ksm' => Request()->nama_ksm,
             'id_desa' => Request()->id_desa,
             'id_kec' => Request()->id_kec,

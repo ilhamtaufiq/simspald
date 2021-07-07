@@ -12,6 +12,8 @@ class DesaController extends Controller
     public function __construct()
     {
         $this->DesaModel = new DesaModel();
+        $this->KecamatanModel = new KecamatanModel();
+
         $this->middleware('auth');
     }
     public function index($id_kec)
@@ -23,16 +25,13 @@ class DesaController extends Controller
         ];
         return view('admin.desa.index', $data);
     }
-
-    public function add(Request $request)
+    public function add($id_kec)
     {
-        $kec = DB::table('tbl_kecamatan')->pluck('id_kec');
-
         $data = [
-            'title' => 'Tambah Desa',
-            'kec' => $kec,
+            'title' => 'Desa',
+            'kec' => $this->DesaModel->AllData($id_kec),
 
-         ];
+        ];
         return view('admin.desa.input', $data);
     }
 
@@ -43,8 +42,8 @@ class DesaController extends Controller
             'n_desa' => 'required',
         ],
         [
-            'id_kec.required' => "Pilih Kecamatan",
-            'n_desa.required' => "Desa Harus Diisi!",
+            'id_kec.required' => "Pilih Pekerjaan SPALD",
+            'n_desa.required' => "Format Tidak Sesuai",
         ],
     );
     $data = [        
@@ -53,38 +52,7 @@ class DesaController extends Controller
     ];
     
     $this->DesaModel->InsertData($data);
-    return redirect()->route('desa')->with('pesan', 'Data Desa Berhasil Ditambahkan');
+    return redirect()->route('kecamatan')->with('pesan', 'Data Koordinat SPALD Berhasil Ditambahkan');
 
-    }
-
-    public function edit($id_desa)
-    {
-        $kec = DB::table('tbl_kecamatan')->get();
-
-        $data = [
-            
-            'title' => 'Edit Data Desa',
-            'kec' => $kec,
-        ];
-        return view('admin.koordinat.edit', $data);
-    }
-
-    public function update($id_desa )
-    {
-        Request()->validate([
-            'id_kec' => 'required',
-            'n_desa' => 'required',
-        ],
-        [
-            'id_kec.required' => "Pilih Kecamatan",
-            'n_desa.required' => "Desa Harus Diisi!",
-        ],
-    );
-    $data = [        
-        'id_kec' => Request()->id_kec,
-        'n_desa' => Request()->n_desa,
-    ];
-        $this->DesaModel->UpdateData($id_desa,$data);
-        return redirect()->route('desa')->with('pesan', 'Data Desa Berhasil Diubah ');   
     }
 }

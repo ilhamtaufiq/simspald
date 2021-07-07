@@ -26,8 +26,8 @@
                         <td>{{ $no++ }}</td>
                         <td><a href="/desa/{{ $d->id_kec }}">{{ $d->n_kec }}</a></td>
                         <td class="text-center">
-                            <a href="/desa/add/{{$d->id_kec}}"><i class="fa fa-edit"></i></a>
-                            <button class="btn btn-sm btn-primary" href="/kecamatan/delete/{{$d->id_kec}}" data-toggle="modal" data-target="#delete{{$d->id_kec}}"><i class="fa fa-trash "></i></button>
+                            <a href="/kecamatan/edit/{{$d->id_kec}}"><i class="fa fa-edit"></i></a>
+                            <!-- <button class="btn btn-sm btn-primary" href="/kecamatan/delete/{{$d->id_kec}}" data-toggle="modal" data-target="#delete{{$d->id_kec}}"><i class="fa fa-trash "></i></button> -->
                         </td>
                     </tr>    
                     @endforeach

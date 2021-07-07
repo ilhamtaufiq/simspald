@@ -5,7 +5,7 @@
 <div class="col-md-12">
     <div class="card card-outline card-primary">
       <div class="card-header">
-        <h3 class="card-title">{{$spald->tipe}} - {{$spald->rincian_tipe}} {{$spald->nama_ksm}} Desa {{$spald->n_desa}} Kecamatan {{$spald->n_kec}}</h3>
+        <h3 class="card-title">{{$spald->tipe}} - {{$spald->rincian_tipe_spalds}} {{$spald->rincian_tipe_spaldt}} {{$spald->nama_ksm}} <br /> Desa {{$spald->n_desa}} Kecamatan {{$spald->n_kec}}</h3>
       </div>
         <div class="card-body">
               <div class="row">
@@ -64,6 +64,7 @@
                       <option value="{{$spald->kondisi}}">Kondisi</option>
                       <option value="Beroperasi">Beroperasi</option>
                       <option value="Rusak">Rusak</option>
+                      <option value="Proses Pembangunan">Proses Pembangunan</option>
                     </select>
                     <div class="text-danger">
                         @error('tipe')
@@ -94,6 +95,35 @@
                     </div>
                   </div>
                 </div>
+                <div class="div col-sm-6">
+                  <div class="form-group">
+                    <label>Tahun</label>
+                    <select name="tahun" class="form-control">
+                      <option value="">Pilih Tahun</option>
+                      <option value="2017">2017</option>
+                      <option value="2018">2018</option>
+                      <option value="2019">2019</option>
+                      <option value="2020">2020</option>
+                      <option value="2021">2021</option>
+                    </select>                    
+                    <div class="text-danger">
+                        @error('tahun')
+                            {{ $message }}
+                        @enderror
+                    </div>
+                  </div>
+                </div>
+                <div class="div col-sm-6">
+                  <div class="form-group">
+                    <label>Pagu Anggaran</label>
+                    <input value="{{$spald->pagu}}" data-type="currency" id="currency-field" type="text" name="pagu" class="form-control" placeholder="Pagu Anggaran">
+                    <div class="text-danger">
+                        @error('pagu')
+                            {{ $message }}
+                        @enderror
+                    </div>
+                  </div>
+              </div>
               </div>
         </div>
       </div>
@@ -108,13 +138,13 @@
             <div class="col-sm-12">
               <div class="form-group">
                 <label>Rincian Kegiatan</label>
-                <select name="rincian_tipe" class="form-control">
-                  <option value="{{$spald->rincian_tipe}}">{{$spald->rincian_tipe}}</option>
+                <select name="rincian_tipe_spalds" class="form-control">
+                  <option value="{{$spald->rincian_tipe_spalds}}">{{$spald->rincian_tipe_spalds}}</option>
                   <option value="Tangki Septik Individual">Tangki Septik Individual</option>
                   <option value="Tangki Septik Komunal">Tangki Septik Komunal</option>
                 </select>
                 <div class="text-danger">
-                    @error('tipe')
+                    @error('rincian_tipe_spalds')
                         {{ $message }}
                     @enderror
                 </div>
@@ -145,13 +175,13 @@
             <div class="col-sm-12">
               <div class="form-group">
                 <label>Tipe</label>
-                <select name="rincian_tipe" class="form-control">
-                  <option value="{{$spald->kondisi}}">{{$spald->rincian_tipe}}</option>
+                <select name="rincian_tipe_spaldt" class="form-control">
+                  <option value="{{$spald->rincian_tipe_spaldt}}">{{$spald->rincian_tipe_spaldt}}</option>
                   <option value="IPAL Komunal">IPAL Komunal</option>
                   <option value="IPAL Kombinasi MCK">IPAL Kombinasi MCK</option>
                 </select>
                 <div class="text-danger">
-                    @error('tipe')
+                    @error('rincian_tipe_spaldt')
                         {{ $message }}
                     @enderror
                 </div>

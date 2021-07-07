@@ -50,7 +50,7 @@ Route::post('/kecamatan/update/{id_kec}', [KecamatanController::class, 'update']
 
 //Desa
 Route::get('/desa/{id_kec}', [DesaController::class, 'index'])->name('desa');
-Route::get('/desa/add/{id_kec}', [DesaController::class, 'add']);
+Route::get('/desa/add/{id_kec}', [DesaController::class, 'add'])->name('addDesa');
 Route::post('/desa/insert', [DesaController::class, 'insert']);
 Route::get('/desa/edit/{id_desa}', [DesaController::class, 'edit']);
 Route::get('/desa/delete/{id_desa}', [DesaController::class, 'delete']);
@@ -70,7 +70,10 @@ Route::get('/rumah', [DataRumahController::class, 'index'])->name('rumah');
 Route::get('/rumah/add', [DataRumahController::class, 'add']);
 Route::post('/rumah/insert', [DataRumahController::class, 'insert']);
 Route::get('/rumah/edit/{id_desa}', [DataRumahController::class, 'edit']);
-Route::get('/rumah/delete/{id_desa}', [DataRumahController::class, 'delete']);
+Route::group(['middleware' => ['role:Master']], function () {
+    Route::get('/rumah/delete/{id_desa}', [DataRumahController::class, 'delete']);
+
+});
 Route::post('/rumah/update/{id_desa}', [DataRumahController::class, 'update']);
 
 //Data Koordinat

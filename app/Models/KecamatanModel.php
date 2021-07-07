@@ -19,10 +19,23 @@ class KecamatanModel extends Model
         ->where('id_kec', $id_kec)
         ->delete();
     }
+    public function InsertData($data)
+    {
+        DB::table('tbl_kecamatan')
+        ->insert($data);
+    }
+
     public function DetailData($id_kec)
     {
         return DB::table('tbl_kecamatan')
-        ->where('id_kec', $id_kec)
-        ->delete();
+        ->where('id_kec', $id_kec)->first();
     }
+
+    public function UpdateData($id_kec, $data)
+    {
+        return DB::table('tbl_kecamatan')
+        ->where('id_kec', $id_kec)
+        ->update($data);
+    }
+
 }

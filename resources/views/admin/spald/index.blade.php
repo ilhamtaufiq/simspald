@@ -18,8 +18,8 @@
                     <th width=60px>No</th>
                     <th>Tipe</th>
                     <th>Nama KSM</th>
-                    <th>Desa</th>
-                    <th>Kecamatan</th>
+                    <th>Lokasi</th>
+                    <th>Tahun Anggaran</th>
                     <th width=100px class="text-center">Opsi</th>
                 </tr>
                 <tbody>
@@ -29,8 +29,8 @@
                         <td>{{ $no++ }}</td>
                         <td>{{ $d->tipe }}</td>
                         <td>{{$d->nama_ksm}}</td>
-                        <td>{{$d->n_desa}}</td>
-                        <td>{{$d->n_kec}}</td>
+                        <td>{{$d->n_desa}} - {{$d->n_kec}}</td>
+                        <td>{{$d->tahun}}</td>
                         <td class="text-center">
                             <a href="/spald/edit/{{$d->id_spald}}"><i class="fa fa-edit"></i></a>
                             <button class="btn btn-sm btn-danger" href="/desa/delete/{{$d->id_spald}}" data-toggle="modal" data-target="#delete{{$d->id_spald}}"><i class="fa fa-trash "></i></button>

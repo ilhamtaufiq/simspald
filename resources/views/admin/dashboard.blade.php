@@ -6,7 +6,7 @@
         <span class="info-box-icon bg-info elevation-1"><i class="fas fa-cog"></i></span>
 
         <div class="info-box-content">
-          <span class="info-box-text">SPALD Terbangun</span>
+          <span class="info-box-text">SPALD</span>
           <span class="info-box-number">
             {{$spald}}
             <small>Unit</small>
@@ -19,10 +19,10 @@
     <!-- /.col -->
     <div class="col-12 col-sm-6 col-md-3">
       <div class="info-box mb-3">
-        <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-thumbs-up"></i></span>
+        <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-home"></i></span>
 
         <div class="info-box-content">
-          <span class="info-box-text">Akses Tersedia</span>
+          <span class="info-box-text">Output</span>
           <span class="info-box-number">{{$akses_tersedia}} <small>Rumah</small></span>
         </div>
         <!-- /.info-box-content -->
@@ -39,8 +39,23 @@
         <span class="info-box-icon bg-success elevation-1"><i class="fas fa-shopping-cart"></i></span>
 
         <div class="info-box-content">
-          <span class="info-box-text">Pagu Anggaran</span>
-          <span class="info-box-number">@rp($pagu)</span>
+          <span class="info-box-text">Pagu</span>
+          <span class="info-box-number">@php
+            $number = $pagu;
+            if ($number < 1000000) {
+                // Anything less than a million
+                $format = number_format($number);
+            } else if ($number < 1000000000) {
+                // Anything less than a billion
+                $format = number_format($number / 1000000, 1, ',', '') . ' Juta';
+            } else {
+                // At least a billion
+                $format = number_format($number / 1000000000, 1, ',', '') . ' Miliar';
+            }
+
+            echo 'Rp'.$format;
+
+          @endphp</span>
         </div>
         <!-- /.info-box-content -->
       </div>
@@ -52,8 +67,8 @@
         <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-users"></i></span>
 
         <div class="info-box-content">
-          <span class="info-box-text">Penerima Manfaat</span>
-          <span class="info-box-number">{{$jiwa}} <small>Jiwa</small></span>
+          <span class="info-box-text">Outcome</span>
+          <span class="info-box-number">{{$akses_tersedia*5}} <small>Jiwa</small></span>
         </div>
         <!-- /.info-box-content -->
       </div>
@@ -155,18 +170,52 @@
           <div class="row">
             <div class="col-sm-3 col-6">
               <div class="description-block border-right">
-                <span class="description-percentage text-success"><i class="fas fa-caret-up"></i> 17%</span>
-                <h5 class="description-header">$35,210.43</h5>
-                <span class="description-text">TOTAL REVENUE</span>
+                <span class="description-percentage text-success"><i></i>2020</span>
+                <h5 class="description-header">
+                  @php
+                    $number = $pagu_2020;
+                    if ($number < 1000000) {
+                        // Anything less than a million
+                        $format = number_format($number);
+                    } else if ($number < 1000000000) {
+                        // Anything less than a billion
+                        $format = number_format($number / 1000000, 1, ',', '') . ' Juta';
+                    } else {
+                        // At least a billion
+                        $format = number_format($number / 1000000000, 1, ',', '') . ' Miliar';
+                    }
+
+                    echo 'Rp'.$format;
+
+                  @endphp
+                </h5>
+                <span class="description-text"></span>
               </div>
               <!-- /.description-block -->
             </div>
             <!-- /.col -->
             <div class="col-sm-3 col-6">
               <div class="description-block border-right">
-                <span class="description-percentage text-warning"><i class="fas fa-caret-left"></i> 0%</span>
-                <h5 class="description-header">$10,390.90</h5>
-                <span class="description-text">TOTAL COST</span>
+                <span class="description-percentage text-success"><i></i>2021</span>
+                <h5 class="description-header">
+                  @php
+                    $number = $pagu_2021;
+                    if ($number < 1000000) {
+                        // Anything less than a million
+                        $format = number_format($number);
+                    } else if ($number < 1000000000) {
+                        // Anything less than a billion
+                        $format = number_format($number / 1000000, 1, ',', '') . ' Juta';
+                    } else {
+                        // At least a billion
+                        $format = number_format($number / 1000000000, 1, ',', '') . ' Miliar';
+                    }
+
+                    echo 'Rp'.$format;
+
+                  @endphp
+                </h5>
+                <span class="description-text"></span>
               </div>
               <!-- /.description-block -->
             </div>

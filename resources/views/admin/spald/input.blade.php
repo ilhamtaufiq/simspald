@@ -64,6 +64,7 @@
                       <option value="">Kondisi</option>
                       <option value="Beroperasi">Beroperasi</option>
                       <option value="Rusak">Rusak</option>
+                      <option value="Proses Pembangunan">Proses Pembangunan</option>
                     </select>
                     <div class="text-danger">
                         @error('kondisi')
@@ -97,7 +98,7 @@
                 <div class="div col-sm-6">
                   <div class="form-group">
                     <label>Tahun</label>
-                    <select name="rincian_tipe" class="form-control">
+                    <select name="tahun" class="form-control">
                       <option value="">Pilih Tahun</option>
                       <option value="2017">2017</option>
                       <option value="2018">2018</option>
@@ -136,13 +137,13 @@
             <div class="col-sm-12">
               <div class="form-group">
                 <label>Rincian Kegiatan</label>
-                <select name="rincian_tipe" class="form-control">
+                <select name="rincian_tipe_spalds" class="form-control">
                   <option value="">Pilih Rincian Kegiatan</option>
                   <option value="Tangki Septik Individual">Tangki Septik Individual</option>
                   <option value="Tangki Septik Komunal">Tangki Septik Komunal</option>
                 </select>
                 <div class="text-danger">
-                    @error('rincian_tipe')
+                    @error('rincian_tipe_spalds')
                         {{ $message }}
                     @enderror
                 </div>
@@ -173,13 +174,13 @@
             <div class="col-sm-12">
               <div class="form-group">
                 <label>Tipe</label>
-                <select name="rincian_tipe" class="form-control">
+                <select name="rincian_tipe_spaldt" class="form-control">
                   <option value="">Pilih Rincian Kegiatan</option>
                   <option value="IPAL Komunal">IPAL Komunal</option>
                   <option value="IPAL Kombinasi MCK">IPAL Kombinasi MCK</option>
                 </select>
                 <div class="text-danger">
-                    @error('rincian_tipe')
+                    @error('rincian_tipe_spaldt')
                         {{ $message }}
                     @enderror
                 </div>

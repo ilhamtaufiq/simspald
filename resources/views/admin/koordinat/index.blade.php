@@ -26,7 +26,7 @@
                     @foreach ($koordinat as $d)
                     <tr>
                         <td>{{ $no++ }}</td>
-                        <td>{{ $d->tipe }} - {{$d->rincian_tipe}} {{$d->nama_ksm}}</td>
+                        <td>{{ $d->tipe }} - {{$d->rincian_tipe_spaldt}} {{$d->rincian_tipe_spalds}} {{$d->nama_ksm}}</td>
                         <td>{{$d->lat_}}</td>
                         <td>{{$d->long_}}</td>
                         <td class="text-center">
@@ -48,7 +48,7 @@
   <div class="modal-dialog">
     <div class="modal-content bg-danger">
       <div class="modal-header">
-        <h4 class="modal-title">Koordinat {{ $d->tipe }} - {{$d->rincian_tipe}} {{$d->nama_ksm}}</h4>
+        <h4 class="modal-title">Koordinat {{ $d->tipe }} - {{$d->nama_ksm}}</h4>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>

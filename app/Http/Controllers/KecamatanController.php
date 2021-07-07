@@ -21,6 +21,67 @@ class KecamatanController extends Controller
         ];
         return view('admin.kecamatan.index', $data);
     }
+    public function add(Request $request)
+    {
+
+        $data = [
+            'title' => 'Tambah Data Kecamatan',
+
+         ];
+        return view('admin.kecamatan.input', $data);
+    }
+
+    public function insert()
+    {
+        Request()->validate([
+            'id_kec' => 'required',
+            'n_kec' => 'required',
+        ],
+        [
+            'id_kec.required' => "Pilih Pekerjaan SPALD",
+            'n_kec.required' => "Format Tidak Sesuai",
+        ],
+    );
+    $data = [        
+        'id_kec' => Request()->id_kec,
+        'n_kec' => Request()->n_kec,
+    ];
+    
+    $this->KecamatanModel->InsertData($data);
+    return redirect()->route('kecamatan')->with('pesan', 'Data Koordinat SPALD Berhasil Ditambahkan');
+
+    }
+
+    public function edit($id_kec)
+    {
+
+        $data = [
+            
+            'title' => 'Tambah Desa',
+            'kec' => $this->KecamatanModel->DetailData($id_kec),
+        ];
+        return view('admin.desa.input', $data);
+    }
+
+    public function update($id_kec )
+    {
+        Request()->validate([
+            'id_kec' => 'required',
+            'n_kec' => 'required',
+        ],
+        [
+            'id_kec.required' => "Pilih Pekerjaan SPALD",
+            'n_kec.required' => "Format Tidak Sesuai",
+        ],
+    );
+    $data = [        
+        'id_kec' => Request()->id_kec,
+        'n_kec' => Request()->n_kec,
+    ];
+        $this->KecamatanModel->UpdateData($id_kec,$data);
+        return redirect()->route('koordinat')->with('pesan', 'Data Koordinat SPALD Berhasil Diubah ');   
+    }
+
     public function delete($id_kec)
     {
         $this->KecamatanModel->DeleteData($id_kec);

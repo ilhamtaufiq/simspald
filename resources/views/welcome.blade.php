@@ -144,20 +144,20 @@ https://templatemo.com/tm-563-seo-dream
           <div class="row">
             <div class="col-lg-4 col-sm-4">
               <div class="about-item">
-                <h4>750+</h4>
+                <h4>{{$spald}}</h4>
                 <h6>SPALD Terbangun</h6>
               </div>
             </div>
             <div class="col-lg-4 col-sm-4">
               <div class="about-item">
-                <h4>340+</h4>
-                <h6>Sambungan Rumah</h6>
+                <h4>{{$akses_tersedia}}</h4>
+                <h6>Unit SR</h6>
               </div>
             </div>
             <div class="col-lg-4 col-sm-4">
               <div class="about-item">
-                <h4>128+</h4>
-                <h6>Penerima Manfaat</h6>
+                <h4>{{$akses_tersedia*5}}</h4>
+                <h6>Jiwa</h6>
               </div>
             </div>
           </div>

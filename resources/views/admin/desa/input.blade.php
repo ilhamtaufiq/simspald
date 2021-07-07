@@ -12,7 +12,7 @@
             <div class="col-sm-6">
                 <div class="form-group">
                     <label>Kecamatan</label>
-                    <input value="{{$kec}}" type="text" id="id_kec" name="id_kec" class="form-control" placeholder="Kecamatan">
+                    <input value="{{$kec->id_kec}}" type="text" id="id_kec" name="id_kec" class="form-control" placeholder="Kecamatan">
                     <div class="text-danger">
                         @error('id_kec')
                             {{ $message }}
