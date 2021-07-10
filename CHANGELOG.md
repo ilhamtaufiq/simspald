@@ -1,6 +1,18 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [v0.4-alpha] - 2021-07-06
+
+### Added
+- Input Data Foto
+- Target dan Realisasi Capaian
+
+### Changed
+- Realisasi Capaian
+- Relasi foto spald
+- Dashboard
+
+
 ## [v0.3-alpha] - 2021-07-06
 
 ### Added
@@ -22,6 +34,7 @@ All notable changes to this project will be documented in this file.
 ### Added
 - Mendapatkan Data Koordinat Lokasi
 
+[v0.4-alpha]: https://github.com/ilhamtaufiq/simspald/compare/v0.3-alpha...v0.4-alpha
 [v0.3-alpha]: https://github.com/ilhamtaufiq/simspald/compare/v.0.2-alpha...v0.3-alpha
 [v0.2-alpha]: https://github.com/ilhamtaufiq/simspald/compare/v0.1-alpha...v.0.2-alpha
 [v0.1-alpha]: https://github.com/ilhamtaufiq/simspald/compare/v0.0.1-alpha...v0.1-alpha
