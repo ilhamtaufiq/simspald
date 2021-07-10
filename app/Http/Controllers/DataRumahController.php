@@ -27,10 +27,13 @@ class DataRumahController extends Controller
     public function add(Request $request)
     {
         $kec = DB::table('tbl_kecamatan')->pluck('n_kec', 'id_kec');
+        $spald = DB::table('tbl_spald')->get();
+
 
         $data = [
             'title' => 'Tambah Daftar Rumah',
             'kecamatan' => $kec,
+            'spald' => $spald,
          ];
         return view('admin.rumah.input', $data);
     }
@@ -47,10 +50,12 @@ class DataRumahController extends Controller
         Request()->validate([
             'id_desa' => 'required',
             'id_kec' => 'required',
+            'id_spald' => 'required',
             'rw' => 'required',
             'rt' => 'required',
             'n_kk' => 'required',
-            'n_nik' => ['required', 'regex:/^\\d{6}([04][1-9]|[1256][0-9]|[37][01])(0[1-9]|1[0-2])\d{2}\d{4}$/'],
+            //'n_nik' => ['required', 'regex:/^\\d{6}([04][1-9]|[1256][0-9]|[37][01])(0[1-9]|1[0-2])\d{2}\d{4}$/'],
+            'n_nik' => 'required',
             'j_anggota' => 'required',
             'klasifikasi' => 'required',
             'risiko_sanitasi' => 'required',
@@ -63,6 +68,7 @@ class DataRumahController extends Controller
         [
             'id_desa' => 'required',
             'id_kec' => 'required',
+            'id_spald' => 'required',
             'rw' => 'required',
             'rt' => 'required',
             'n_kk' => 'required',
@@ -83,6 +89,7 @@ class DataRumahController extends Controller
     $data = [        
         'id_desa' => Request()->id_desa,
         'id_kec' => Request()->id_kec,
+        'id_spald' => Request()->id_spald,
         'rw' => Request()->rw,
         'rt' => Request()->rt,
         'n_kk' => Request()->n_kk,
@@ -105,12 +112,15 @@ class DataRumahController extends Controller
     public function edit($id_rumah)
     {
         $kec = DB::table('tbl_kecamatan')->pluck('n_kec', 'id_kec');
+        $spald = DB::table('tbl_spald')->get();
+
 
         $data = [
             
             'title' => 'Edit Data Rumah',
             'rumah' => $this->DataRumahModel->DetailData($id_rumah),
             'kecamatan' => $kec,
+            'spald' => $spald
         ];
         return view('admin.rumah.edit', $data);
     }
@@ -120,10 +130,12 @@ class DataRumahController extends Controller
         Request()->validate([
             'id_desa' => 'required',
             'id_kec' => 'required',
+            'id_spald' => 'required',
             'rw' => 'required',
             'rt' => 'required',
             'n_kk' => 'required',
-            'n_nik' => ['required', 'regex:/^\\d{6}([04][1-9]|[1256][0-9]|[37][01])(0[1-9]|1[0-2])\d{2}\d{4}$/'],
+            //'n_nik' => ['required', 'regex:/^\\d{6}([04][1-9]|[1256][0-9]|[37][01])(0[1-9]|1[0-2])\d{2}\d{4}$/'],
+            'n_nik' => 'required',
             'j_anggota' => 'required',
             'klasifikasi' => 'required',
             'risiko_sanitasi' => 'required',
@@ -136,6 +148,7 @@ class DataRumahController extends Controller
         [
             'id_desa' => 'required',
             'id_kec' => 'required',
+            'id_spald' => 'required',
             'rw' => 'required',
             'rt' => 'required',
             'n_kk' => 'required',
@@ -156,6 +169,7 @@ class DataRumahController extends Controller
     $data = [        
         'id_desa' => Request()->id_desa,
         'id_kec' => Request()->id_kec,
+        'id_spald' => Request()->id_spald,
         'rw' => Request()->rw,
         'rt' => Request()->rt,
         'n_kk' => Request()->n_kk,

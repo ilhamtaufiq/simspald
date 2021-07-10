@@ -11,26 +11,23 @@
             <div class="row">
                 <div class="col-sm-6">
                     <div class="form-group">
-                        <label>Kecamatan</label>
-                            <select id="kec" name="id_kec" class="form-control select2bs4" data-dropdown-css-class="select2-danger" style="width: 100%;">
-                            <option value="">Pilih Kecamatan</option>
-                            @foreach($kecamatan as $key => $value)
-                            <option value="{{$key}}">{{$value}}</option>
-                            @endforeach
-                            </select>
-                            <div class="text-danger">
-                                @error('id_kec')
-                                    {{ $message }}
-                                @enderror
-                            </div>
+                        <label>Komponen Spald</label>
+                        <input hidden type="number" id="id_desa" name="id_desa" class="form-control" placeholder="Tanpa Akses">
+  
+                        <input hidden type="number" id="id_kec" name="id_kec" class="form-control" placeholder="Tanpa Akses">
+  
+                      <select id="id_spald" name="id_spald" class="form-control select2bs4" data-dropdown-css-class="select2-danger" style="width: 100%;">
+                        <option value="">SPALD</option>
+                        @foreach($spald as $s)
+                        <option value="{{$s->id_spald}}">{{$s->nama_ksm}}</option>
+                        @endforeach
+                      </select>
+                      <div class="text-danger">
+                          @error('id_spald')
+                              {{ $message }}
+                          @enderror
+                      </div>
                     </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="form-group">
-                        <label for="id_desa">Desa</label>
-                            <select value="" name="id_desa" id="id_desa" class="form-control select2bs4" ></select>
-                    </div>
-                </div>
                 <div class="div col-sm-6">
                     <div class="form-group">
                         <label>RW</label>
@@ -216,30 +213,30 @@ $(function () {
     })
 })
 jQuery(document).ready(function (){
-            jQuery($('#kec')).on('change',function(){
-                var KecID = jQuery(this).val();
-                if(KecID)
+            jQuery($('#id_spald')).on('change',function(){
+                var id = jQuery(this).val();
+                if(id)
                 {
                     jQuery.ajax({
-                        url : '/spald/desa/' +KecID,
+                        url : '/spald/kec/' +id,
                         type : "GET",
                         dataType : "json",
                         success:function(data)
                         {
                             console.log(data);
-                            jQuery($('#id_desa')).empty();
-                            jQuery.each(data, function(key,value){
-                            $($('#id_desa')).append('<option value="'+ key +'">'+ value +'</option>');
-                            });
+                            document.getElementById("id_desa").value = data[0].id_desa;
+                            document.getElementById("id_kec").value = data[0].id_kec;
                         }
                     });
                 }
                 else
                 {
                     $($('#id_desa')).empty();
+                    $($('#id_kec')).empty();
+
                 }
             });
-});
+        });
 </script>
 @endsection
 

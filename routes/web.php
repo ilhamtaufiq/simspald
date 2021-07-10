@@ -13,6 +13,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\FotoController;
+use Spatie\Sitemap\SitemapGenerator;
 
 
 
@@ -115,4 +116,10 @@ Route::post('/foto/update/{id_foto}', [FotoController::class, 'update']);
 Route::group(['middleware' => ['auth']], function() {
     Route::resource('roles', RoleController::class);
     Route::resource('users', UserController::class);
+});
+
+Route::get("sitemap", function () {
+
+    SitemapGenerator::create(config('app.url'))->writeToFile(public_path('sitemap.xml'));    
+    return 'Sitemap generated';
 });

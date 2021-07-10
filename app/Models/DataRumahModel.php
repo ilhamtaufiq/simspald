@@ -27,6 +27,7 @@ class DataRumahModel extends Model
         return DB::table('tbl_rumah')
         ->join('tbl_kecamatan', 'tbl_kecamatan.id_kec', '=', 'tbl_rumah.id_kec')
         ->join('tbl_desa', 'tbl_desa.id_desa', '=', 'tbl_rumah.id_desa')
+        ->join('tbl_spald', 'tbl_spald.id_spald', '=', 'tbl_rumah.id_spald')
         ->where('id_rumah', $id_rumah)->first();
     }
 

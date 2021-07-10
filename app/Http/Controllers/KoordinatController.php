@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\KoordinatModel;
+use App\Models\SpaldModel;
 use DB;
 
 class KoordinatController extends Controller
@@ -11,6 +12,7 @@ class KoordinatController extends Controller
     public function __construct()
     {
         $this->KoordinatModel = new KoordinatModel();
+        $this->SpaldModel = new SpaldModel();
         $this->middleware('auth');
     }
 
@@ -26,11 +28,10 @@ class KoordinatController extends Controller
     
     public function add(Request $request)
     {
-        $spald = DB::table('tbl_spald')->get();
 
         $data = [
             'title' => 'Tambah Data Koordinat SPALD',
-            'spald' => $spald,
+            'spald' => $this->SpaldModel->AllData(),
 
          ];
         return view('admin.koordinat.input', $data);

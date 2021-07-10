@@ -11,24 +11,20 @@
             <div class="row">
                 <div class="col-sm-6">
                     <div class="form-group">
-                        <label>Kecamatan</label>
-                            <select id="kec" name="id_kec" class="form-control select2bs4" data-dropdown-css-class="select2-danger" style="width: 100%;">
-                            <option value="">Pilih Kecamatan</option>
-                            @foreach($kecamatan as $key => $value)
-                            <option value="{{$key}}">{{$value}}</option>
-                            @endforeach
-                            </select>
-                            <div class="text-danger">
-                                @error('id_kec')
-                                    {{ $message }}
-                                @enderror
-                            </div>
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="form-group">
-                        <label for="id_desa">Desa</label>
-                            <select value="" name="id_desa" id="id_desa" class="form-control select2bs4" ></select>
+                        <label>Komponen Spald</label>
+                        <input hidden type="number" id="id_desa" name="id_desa" class="form-control" placeholder="Tanpa Akses">
+                        <input hidden type="number" id="id_kec" name="id_kec" class="form-control" placeholder="Tanpa Akses">
+                      <select id="id_spald" name="id_spald" class="form-control select2bs4" data-dropdown-css-class="select2-danger" style="width: 100%;">
+                        <option value="{{$rumah->id_spald}}">{{$rumah->nama_ksm}}</option>
+                        @foreach($spald as $s)
+                        <option value="{{$s->id_spald}}">{{$s->nama_ksm}}</option>
+                        @endforeach
+                      </select>
+                      <div class="text-danger">
+                          @error('id_spald')
+                              {{ $message }}
+                          @enderror
+                      </div>
                     </div>
                 </div>
                 <div class="div col-sm-6">
