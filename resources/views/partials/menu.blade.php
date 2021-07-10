@@ -23,7 +23,7 @@
         <a href="#" class="nav-link">
           <i class="nav-icon fas fa-tachometer-alt"></i>
           <p>
-            Standar Pelayanan Minimal
+            SPM
             <i class="right fas fa-angle-left"></i>
           </p>
         </a>
@@ -70,12 +70,11 @@
         </a>
       </li>
       <li class="nav-item">
-        <a href="#" class="nav-link">
+        <a href="/foto/spald" class="nav-link {{request()->is('foto/spald') ? 'active' : ''}}">
           <i class="nav-icon fas fa-book"></i>
           <p>
             Dokumentasi
           </p>
         </a>
       </li>
-    </ul>
 </nav>

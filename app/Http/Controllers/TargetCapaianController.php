@@ -15,6 +15,7 @@ class TargetCapaianController extends Controller
     }
     public function index()
     {
+
         $data = [
             'title' => 'Target Capaian',
             'target' => $this->TargetCapaianModel->AllData(),
@@ -47,7 +48,6 @@ class TargetCapaianController extends Controller
         Request()->validate([
             'id_kec' => 'required',
             'id_desa' => 'required',
-            'total_rumah' => 'required',
             'akses_dasar' => 'required',
             'aa_spalds' => 'required',
             'aa_spaldt' => 'required',
@@ -55,7 +55,6 @@ class TargetCapaianController extends Controller
         [
             'id_kec' => 'required',
             'id_desa' => 'required',
-            'total_rumah' => 'required',
             'akses_dasar' => 'required',
             'aa_spalds' => 'required',
             'aa_spaldt' => 'required',
@@ -64,7 +63,6 @@ class TargetCapaianController extends Controller
     $data = [        
         'id_kec' => Request()->id_kec,
         'id_desa' => Request()->id_desa,
-        'total_rumah' => Request()->total_rumah,
         'akses_dasar' => Request()->akses_dasar,
         'aa_spalds' => Request()->aa_spalds,
         'aa_spaldt' => Request()->aa_spaldt,
@@ -93,7 +91,6 @@ class TargetCapaianController extends Controller
         Request()->validate([
             'id_kec' => 'required',
             'id_desa' => 'required',
-            'total_rumah' => 'required',
             'akses_dasar' => 'required',
             'aa_spalds' => 'required',
             'aa_spaldt' => 'required',
@@ -101,7 +98,6 @@ class TargetCapaianController extends Controller
         [
             'id_kec' => 'required',
             'id_desa' => 'required',
-            'total_rumah' => 'required',
             'akses_dasar' => 'required',
             'aa_spalds' => 'required',
             'aa_spaldt' => 'required',
@@ -110,7 +106,6 @@ class TargetCapaianController extends Controller
         $data = [        
         'id_kec' => Request()->id_kec,
         'id_desa' => Request()->id_desa,
-        'total_rumah' => Request()->total_rumah,
         'akses_dasar' => Request()->akses_dasar,
         'aa_spalds' => Request()->aa_spalds,
         'aa_spaldt' => Request()->aa_spaldt,

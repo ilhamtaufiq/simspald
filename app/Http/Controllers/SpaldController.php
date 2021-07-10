@@ -45,6 +45,13 @@ class SpaldController extends Controller
 
         return response()->json($data);
     }
+    public function getkec($id_spald)
+    {
+        $data = DB::table('tbl_spald')
+        ->where('id_spald', $id_spald)
+        ->get();
+        return response()->json($data);
+    }
     public function insert()
     {
         Request()->validate([

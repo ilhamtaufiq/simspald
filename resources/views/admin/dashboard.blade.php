@@ -82,7 +82,7 @@
     <div class="col-md-12">
       <div class="card">
         <div class="card-header">
-          <h5 class="card-title">Chart</h5>
+          <h5 class="card-title">Standar Pelayanan Minimal</h5>
 
           <div class="card-tools">
             <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -122,43 +122,56 @@
             <!-- /.col -->
             <div class="col-md-4">
               <p class="text-center">
-                <strong>Target Capaian</strong>
+                <strong>Persentase Layanan {{$capaian_spm*100,1}}%</strong>
               </p>
 
               <div class="progress-group">
-                Akses Dasar SPALD-T
-                <span class="float-right"><b>160</b>/200</span>
+                Tanpa Akses
+                <span class="float-right"><b>{{$tanpa_akses}}</b>/{{number_format($total_rumah)}}</span>
                 <div class="progress progress-sm">
-                  <div class="progress-bar bg-primary" style="width: 80%"></div>
+                  <div class="tooltip">Hover over me
+                    <span class="tooltiptext">Tooltip text</span>
+                  </div> 
+                  <div class="progress-bar bg-primary" style="width: {{$tanpa_akses/($total_rumah)*100,1}}%">{{$tanpa_akses/($total_rumah)*100,1}}%</div>
                 </div>
               </div>
               <!-- /.progress-group -->
 
               <div class="progress-group">
-                Akses Layak SPALD-T
-                <span class="float-right"><b>310</b>/400</span>
+                Akses Dasar
+                <span class="float-right"><b>{{$r_akses_dasar}}</b>/{{number_format($total_rumah)}}</span>
                 <div class="progress progress-sm">
-                  <div class="progress-bar bg-danger" style="width: 75%"></div>
+                  <div class="progress-bar bg-danger" style="width: {{$r_akses_dasar/($total_rumah)*100,1}}%">{{$r_akses_dasar/($total_rumah)*100,1}}%</div>
                 </div>
               </div>
 
               <!-- /.progress-group -->
               <div class="progress-group">
-                <span class="progress-text">Akses Dasar SPALD-S</span>
-                <span class="float-right"><b>480</b>/800</span>
+                <span class="progress-text">Akses Layak</span>
+                <span class="float-right"><b>{{$akses_layak}}</b>/{{number_format($total_rumah)}}</span>
                 <div class="progress progress-sm">
-                  <div class="progress-bar bg-success" style="width: 60%"></div>
+                  <div class="progress-bar bg-success" style="width: {{$akses_layak/($total_rumah)*100,1}}%">{{$akses_layak/($total_rumah)*100,1}}%</div>
                 </div>
               </div>
 
               <!-- /.progress-group -->
               <div class="progress-group">
-                Akses Dasar SPALD-S
-                <span class="float-right"><b>250</b>/500</span>
+                Akses Aman SPALD-S
+                <span class="float-right"><b>{{$r_aa_spalds}}</b>/{{number_format($total_rumah)}}</span>
                 <div class="progress progress-sm">
-                  <div class="progress-bar bg-warning" style="width: 50%"></div>
+                  <div class="progress-bar bg-danger" style="width: {{$r_aa_spalds/($total_rumah)*100,1}}%">{{$r_aa_spalds/($total_rumah)*100,1}}%</div>
                 </div>
               </div>
+              
+              <!-- /.progress-group -->
+              <div class="progress-group">
+                Akses Aman SPALD-T
+                <span class="float-right"><b>{{$r_aa_spaldt}}</b>/{{number_format($total_rumah)}}</span>
+                <div class="progress progress-sm">
+                  <div class="progress-bar bg-danger" style="width: {{$r_aa_spaldt/($total_rumah)*100,1}}%">{{$r_aa_spaldt/($total_rumah)*100,1}}%</div>
+                </div>
+              </div>
+              
               <!-- /.progress-group -->
             </div>
             <!-- /.col -->
@@ -170,7 +183,7 @@
           <div class="row">
             <div class="col-sm-3 col-6">
               <div class="description-block border-right">
-                <span class="description-percentage text-success"><i></i>2020</span>
+                <span class="description-percentage text-success"><i class="fas fa-caret-up"></i>{{number_format(($pagu_2020-7125000000)/7125000000*(100/100)*100,1)}}%</span>
                 <h5 class="description-header">
                   @php
                     $number = $pagu_2020;
@@ -189,14 +202,14 @@
 
                   @endphp
                 </h5>
-                <span class="description-text"></span>
+                <span class="description-text">2020</span>
               </div>
               <!-- /.description-block -->
             </div>
             <!-- /.col -->
             <div class="col-sm-3 col-6">
               <div class="description-block border-right">
-                <span class="description-percentage text-success"><i></i>2021</span>
+                <span class="description-percentage text-success"><i class="fas fa-caret-up"></i>{{number_format(($pagu_2021-$pagu_2020)/$pagu_2020*(100/100)*100,1)}}%</span>
                 <h5 class="description-header">
                   @php
                     $number = $pagu_2021;
@@ -215,25 +228,25 @@
 
                   @endphp
                 </h5>
-                <span class="description-text"></span>
+                <span class="description-text">2021</span>
               </div>
               <!-- /.description-block -->
             </div>
             <!-- /.col -->
             <div class="col-sm-3 col-6">
               <div class="description-block border-right">
-                <span class="description-percentage text-success"><i class="fas fa-caret-up"></i> </span>
-                <h5 class="description-header"> </h5>
-                <span class="description-text"> </span>
+                <span class="description-percentage text-success"><i class="fas fa-caret-up"></i>-</span>
+                <h5 class="description-header">Rp</h5>
+                <span class="description-text">2022</span>
               </div>
               <!-- /.description-block -->
             </div>
             <!-- /.col -->
             <div class="col-sm-3 col-6">
               <div class="description-block">
-                <span class="description-percentage text-danger"><i class="fas fa-caret-down"></i> </span>
-                <h5 class="description-header"> </h5>
-                <span class="description-text"> </span>
+                <span class="description-percentage text-success"><i class="fas fa-caret-up"></i>-</span>
+                <h5 class="description-header">Rp</h5>
+                <span class="description-text">2023</span>
               </div>
               <!-- /.description-block -->
             </div>

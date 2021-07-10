@@ -26,10 +26,13 @@ class RealisasiCapaianController extends Controller
     public function add(Request $request)
     {
         $kec = DB::table('tbl_kecamatan')->pluck('n_kec', 'id_kec');
+        $spald = DB::table('tbl_spald')->get();
+
 
         $data = [
             'title' => 'Tambah Realisasi Capaian',
             'kecamatan' => $kec,
+            'spald' => $spald,
 
          ];
         return view('admin.capaian.realisasi.input', $data);
@@ -42,11 +45,20 @@ class RealisasiCapaianController extends Controller
 
         return response()->json($data);
     }
+    public function getKec($id_spald)
+    {
+        $data = DB::table('tbl_desa')
+        ->where('id_spald', $id_spald)
+        ->pluck('n_kec', 'id_kec');
+
+        return response()->json($data);
+    }
     public function insert()
     {
         Request()->validate([
             'id_kec' => 'required',
             'id_desa' => 'required',
+            'id_spald' => 'required',
             'tanpa_akses' => 'required',
             'akses_dasar' => 'required',
             'akses_layak' => 'required',
@@ -56,6 +68,7 @@ class RealisasiCapaianController extends Controller
         [
             'id_kec' => 'required',
             'id_desa' => 'required',
+            'id_spald' => 'required',
             'tanpa_akses' => 'required',
             'akses_dasar' => 'required',
             'akses_layak' => 'required',
@@ -66,6 +79,7 @@ class RealisasiCapaianController extends Controller
         $data = [        
         'id_kec' => Request()->id_kec,
         'id_desa' => Request()->id_desa,
+        'id_spald' => Request()->id_spald,
         'tanpa_akses' => Request()->tanpa_akses,
         'akses_dasar' => Request()->akses_dasar,
         'akses_layak' => Request()->akses_layak,
@@ -96,6 +110,7 @@ class RealisasiCapaianController extends Controller
         Request()->validate([
             'id_kec' => 'required',
             'id_desa' => 'required',
+            'id_spald' => 'required',
             'tanpa_akses' => 'required',
             'akses_dasar' => 'required',
             'akses_layak' => 'required',
@@ -105,6 +120,7 @@ class RealisasiCapaianController extends Controller
         [
             'id_kec' => 'required',
             'id_desa' => 'required',
+            'id_spald' => 'required',
             'tanpa_akses' => 'required',
             'akses_dasar' => 'required',
             'akses_layak' => 'required',
@@ -115,6 +131,7 @@ class RealisasiCapaianController extends Controller
         $data = [        
         'id_kec' => Request()->id_kec,
         'id_desa' => Request()->id_desa,
+        'id_spald' => Request()->id_spald,
         'tanpa_akses' => Request()->tanpa_akses,
         'akses_dasar' => Request()->akses_dasar,
         'akses_layak' => Request()->akses_layak,

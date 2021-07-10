@@ -12,6 +12,8 @@ use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\FotoController;
+
 
 
 
@@ -96,9 +98,19 @@ Route::post('/target/update/{id_capaian}', [TargetCapaianController::class, 'upd
 Route::get('/realisasi', [RealisasiCapaianController::class, 'index'])->name('realisasi');
 Route::get('/realisasi/add', [RealisasiCapaianController::class, 'add']);
 Route::post('/realisasi/insert', [RealisasiCapaianController::class, 'insert']);
+Route::get('/spald/kec/{id_spald}', [SpaldController::class, 'getkec']);
 Route::get('/realisasi/edit/{id_capaian}', [RealisasiCapaianController::class, 'edit']);
 Route::get('/realisasi/delete/{id_capaian}', [RealisasiCapaianController::class, 'delete']);
 Route::post('/realisasi/update/{id_capaian}', [RealisasiCapaianController::class, 'update']);
+
+//Foto Realisasi
+Route::get('/foto/spald', [FotoController::class, 'index'])->name('foto');
+Route::get('/dokumentasi/{id_spald}', [FotoController::class, 'detail']);
+Route::get('/foto/tambah', [FotoController::class, 'add']);
+Route::post('/foto/insert', [FotoController::class, 'insert']);
+Route::get('/foto/edit/{id_foto}', [FotoController::class, 'edit']);
+Route::get('/foto/delete/{id_foto}', [FotoController::class, 'delete']);
+Route::post('/foto/update/{id_foto}', [FotoController::class, 'update']);
 
 Route::group(['middleware' => ['auth']], function() {
     Route::resource('roles', RoleController::class);

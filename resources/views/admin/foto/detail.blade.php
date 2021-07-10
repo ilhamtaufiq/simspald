@@ -3,9 +3,9 @@
 <div class="col-md-12">
     <div class="card card-outline card-primary">
       <div class="card-header">
-        <h3 class="card-title">Target Capaian</h3>
+        <h3 class="card-title">Data Foto {{$nama->nama_ksm}}</h3>
         <div class="card-tools">
-          <a href="/target/add" type="button" class="btn btn-sm btn-primary btn-flat">
+          <a href="/foto/add" type="button" class="btn btn-sm btn-primary btn-flat">
             <i class="fas fa-plus"></i>
             Tambah
           </a>
@@ -15,23 +15,22 @@
         <table id="example1" class="table table-bordered table-striped">
             <thead>
                 <tr>
-                    <th width=60px>No</th>
-                    <th>Desa</th>
-                    <th>Kecamatan</th>
-                    <th>Total Rumah</th>
+                    <th width=20px>No</th>
+                    <th>Deskripsi</th>
+                    <th>Foto</th>
                     <th width=100px class="text-center">Opsi</th>
                 </tr>
                 <tbody>
                     <?php $no=1; ?>
-                    @foreach ($target as $d)
+                    @foreach ($ksm as $d)
                     <tr>
                         <td>{{ $no++ }}</td>
-                        <td>{{ $d->n_desa }}</td>
-                        <td>{{$d->n_kec}}</td>
-                        <td>{{number_format($d->akses_dasar+$d->aa_spalds+$d->aa_spaldt)}}</td>
+                        <td>{{$d->deskripsi}}</td>
+                        <td><img src="{{asset('foto')}}/{{$d->foto}}" width="70px"></td>
+
                         <td class="text-center">
-                            <a href="/target/edit/{{$d->id_capaian}}"><i class="fa fa-edit"></i></a>
-                            <button class="btn btn-sm btn-primary" href="/tarfet/delete/{{$d->id_capaian}}" data-toggle="modal" data-target="#delete{{$d->id_capaian}}"><i class="fa fa-trash "></i></button>
+                            <a href="/foto/edit/{{$d->id_foto}}"><i class="fa fa-edit"></i></a>
+                            <button class="btn btn-sm btn-primary" href="/foto/delete/{{$d->id_foto}}" data-toggle="modal" data-target="#delete{{$d->id_foto}}"><i class="fa fa-trash "></i></button>
                         </td>
                     </tr>    
                     @endforeach
@@ -41,12 +40,14 @@
       </div>
     </div>
 </div>
-@foreach ($target as $d)
-<div class="modal fade" id="delete{{$d->id_capaian}}">
+<div class="col-md-12" id="map" style="width: 100%; height: 400px;"></div>
+
+@foreach ($ksm as $d)
+<div class="modal fade" id="delete{{$d->id_foto}}">
   <div class="modal-dialog">
     <div class="modal-content bg-danger">
       <div class="modal-header">
-        <h4 class="modal-title">Hapus Target Capaian Desa {{$d->n_desa}} Kecamatan {{$d->n_kec}}</h4>
+        <h4 class="modal-title">Foto {{$d->nama_ksm}}</h4>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -56,7 +57,7 @@
       </div>
       <div class="modal-footer justify-content-between">
         <button type="button" class="btn btn-outline-light" data-dismiss="modal">Tidak</button>
-        <a href="/target/delete/{{$d->id_capaian}}" type="button" class="btn btn-outline-light">Ya</a>
+        <a href="/foto/delete/{{$d->id_foto}}" type="button" class="btn btn-outline-light">Ya</a>
       </div>
     </div>
   </div>

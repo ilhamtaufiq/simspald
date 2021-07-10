@@ -39,7 +39,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- summernote -->
     <link rel="stylesheet" href="{{ asset('adminlte') }}/plugins/summernote/summernote-bs4.min.css">
   
-
   <!-- jQuery -->
 <script src="{{ asset('adminlte') }}/plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->

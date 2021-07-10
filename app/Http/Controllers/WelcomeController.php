@@ -23,6 +23,8 @@ class WelcomeController extends Controller
         $p = $pagu->sum('total');
         $jiwa = DB::table('tbl_rumah')->sum('j_anggota');
 
+        $foto = DB::table('tbl_foto')->get();
+
 
         $data = [
             'title' => 'SIMSPALD',
@@ -31,6 +33,7 @@ class WelcomeController extends Controller
             'jiwa' => $jiwa,
             'akses_tersedia' => $akses,
             'pagu' => $p,
+            'foto' => $foto,
 
 
 

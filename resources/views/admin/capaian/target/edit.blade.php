@@ -33,17 +33,6 @@
                 </div>
                 <div class="div col-sm-6">
                   <div class="form-group">
-                    <label>Total Rumah</label>
-                    <input value="{{$target->total_rumah}}" type="number" name="total_rumah" class="form-control" placeholder="Total Rumah">
-                    <div class="text-danger">
-                        @error('total_rumah')
-                            {{ $message }}
-                        @enderror
-                    </div>
-                  </div>
-                </div>
-                <div class="div col-sm-6">
-                  <div class="form-group">
                     <label>Akses Dasar</label>
                     <input value="{{$target->akses_dasar}}" type="number" name="akses_dasar" class="form-control" placeholder="Akses Dasar">
                     <div class="text-danger">

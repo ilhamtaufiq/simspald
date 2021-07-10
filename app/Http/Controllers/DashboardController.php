@@ -34,6 +34,25 @@ class DashboardController extends Controller
         ->get();
         $p2021 = $pagu2021->sum('total');
 
+        $tanpa_akses = DB::table('tbl_r_capaian')->sum('tanpa_akses');
+        $realisasi_akses_dasar = DB::table('tbl_r_capaian')->sum('akses_dasar');
+        $akses_layak = DB::table('tbl_r_capaian')->sum('akses_layak');
+        $r_aa_spalds = DB::table('tbl_r_capaian')->sum('aa_spalds');
+        $r_aa_spaldt = DB::table('tbl_r_capaian')->sum('aa_spaldt');
+
+
+
+
+
+        $akses_dasar = DB::table('tbl_t_capaian')->sum('akses_dasar');
+        $aa_spaldt = DB::table('tbl_t_capaian')->sum('aa_spaldt');
+        $aa_spalds = DB::table('tbl_t_capaian')->sum('aa_spalds');
+
+        $total_rumah = $akses_dasar+$aa_spalds+$aa_spaldt;
+
+
+
+
 
         $jiwa = DB::table('tbl_rumah')->sum('j_anggota');
         $data = [
@@ -45,8 +64,19 @@ class DashboardController extends Controller
             'chart_akses' => $chart_akses,
             'pagu_2020' => $p2020,
             'pagu_2021' => $p2021,
+            'tanpa_akses' => $tanpa_akses,
+            'r_akses_dasar' =>$realisasi_akses_dasar,
+            'r_aa_spalds' => $r_aa_spalds,
+            'r_aa_spaldt' => $r_aa_spaldt,
+            'akses_layak' => $akses_layak,
 
+            'capaian_spm' => number_format($tanpa_akses/$total_rumah)+($akses_layak/$total_rumah)+($realisasi_akses_dasar/$total_rumah)+($r_aa_spalds/$total_rumah)+($r_aa_spaldt/$total_rumah),
+            
+            'akses_dasar'=> $akses_dasar,
+            'aa_spalds' => $aa_spalds,
+            'aa_spaldt' => $aa_spaldt,
 
+            'total_rumah' => $total_rumah
         ];
         return view('admin.dashboard', $data);
 
