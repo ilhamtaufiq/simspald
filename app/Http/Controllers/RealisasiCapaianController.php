@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\RealisasiCapaianModel;
+use App\Models\SpaldModel;
 use DB;
 
 class RealisasiCapaianController extends Controller
@@ -11,6 +12,7 @@ class RealisasiCapaianController extends Controller
     public function __construct()
     {
         $this->RealisasiCapaianModel = new RealisasiCapaianModel();
+        $this->SpaldModel = new SpaldModel();
         $this->middleware('auth');
     }
     public function index()
@@ -26,13 +28,13 @@ class RealisasiCapaianController extends Controller
     public function add(Request $request)
     {
         $kec = DB::table('tbl_kecamatan')->pluck('n_kec', 'id_kec');
-        $spald = DB::table('tbl_spald')->get();
+       // $spald = DB::table('tbl_spald')->get();
 
 
         $data = [
             'title' => 'Tambah Realisasi Capaian',
             'kecamatan' => $kec,
-            'spald' => $spald,
+            'spald' => $this->SpaldModel->AllData(),
 
          ];
         return view('admin.capaian.realisasi.input', $data);
@@ -99,10 +101,11 @@ class RealisasiCapaianController extends Controller
         $data = [
             
             'title' => 'Edit Data Target Capaian',
-            'target' => $this->RealisasiCapaianModel->DetailData($id_capaian),
-            'kecamatan' => $kec,
+            'realisasi' => $this->RealisasiCapaianModel->DetailData($id_capaian),
+            'spald' => $this->SpaldModel->AllData(),
+
         ];
-        return view('admin.capaian.target.edit', $data);
+        return view('admin.capaian.realisasi.edit', $data);
     }
     
     public function update($id_capaian)

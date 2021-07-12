@@ -12,6 +12,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
     <title>SIMSPALD CIANJUR</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="{{asset('img')}}/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{asset('img')}}/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('img')}}/favicon-16x16.png">
+    <link rel="shortcut icon" type="image/x-icon" href="{{asset('img')}}/favicon.ico">
 
     <!-- Bootstrap core CSS -->
     <link href="{{asset('fe')}}/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -63,7 +67,7 @@ https://templatemo.com/tm-563-seo-dream
           <nav class="main-nav">
             <!-- ***** Logo Start ***** -->
             <a href="index.html" class="logo">
-              <h4>SIMSPALD <img src="{{asset('fe')}}/assets/images/logo-icon.png" alt=""></h4>
+              <h4>SIMSPALD <img src="/logo.png" alt=""></h4>
             </a>
             <!-- ***** Logo End ***** -->
             <!-- ***** Menu Start ***** -->
@@ -97,7 +101,7 @@ https://templatemo.com/tm-563-seo-dream
                       <em>Sistem Pengolahan Air Limbah Domestik <br />(SPALD)</em>
                   </div>
                   <div class="col-lg-12">
-                    <h2>SIMSPALD Cianjur</h2>
+                    <h2>SIMSPALD</h2>
                   </div>
                 </div>
               </div>

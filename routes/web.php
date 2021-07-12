@@ -113,13 +113,7 @@ Route::get('/foto/edit/{id_foto}', [FotoController::class, 'edit']);
 Route::get('/foto/delete/{id_foto}', [FotoController::class, 'delete']);
 Route::post('/foto/update/{id_foto}', [FotoController::class, 'update']);
 
-Route::group(['middleware' => ['auth']], function() {
+Route::group(['middleware' => ['role:Super Admin']], function () {
     Route::resource('roles', RoleController::class);
     Route::resource('users', UserController::class);
-});
-
-Route::get("sitemap", function () {
-
-    SitemapGenerator::create(config('app.url'))->writeToFile(public_path('sitemap.xml'));    
-    return 'Sitemap generated';
 });

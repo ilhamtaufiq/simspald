@@ -129,7 +129,7 @@ class RoleController extends Controller
 
         return redirect()->route('roles.index')
 
-                        ->with('success','Role created successfully');
+                        ->with('pesan','Role berhasil dibuat');
 
     }
 
@@ -245,7 +245,7 @@ class RoleController extends Controller
 
         return redirect()->route('roles.index')
 
-                        ->with('success','Role updated successfully');
+                        ->with('pesan','Role Berhasil Diubah');
 
     }
 
@@ -269,7 +269,7 @@ class RoleController extends Controller
 
         return redirect()->route('roles.index')
 
-                        ->with('success','Role deleted successfully');
+                        ->with('pesan','Role berhasil dihapus');
 
     }
 

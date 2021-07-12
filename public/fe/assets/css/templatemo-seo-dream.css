@@ -255,7 +255,7 @@ header
 */
 
 .background-header {
-  background-color: #33ccc5!important;
+  background-image: linear-gradient( 200deg, #4053d8 12%, rgba(255, 255, 255, 0) 65%), linear-gradient(255deg, #e53ab8 71%, rgba(255, 255, 255, 0) 87%), radial-gradient(ellipse at 85% 52%, #ff9962 31%, rgba(255, 255, 255, 0) 99%), radial-gradient( ellipse at -45% 119%, #ff7870 66%, rgba(255, 255, 255, 0) 84%), linear-gradient(110deg, #4a4518 18%, rgba(255, 255, 255, 0) 98%)!important;
   height: 80px!important;
   position: fixed!important;
   top: 0px;
@@ -290,7 +290,7 @@ header
 }
 
 .header-area {
-  background-color: #33ccc5;
+  background-image: linear-gradient( 200deg, #4053d8 12%, rgba(255, 255, 255, 0) 65%), linear-gradient(255deg, #e53ab8 71%, rgba(255, 255, 255, 0) 87%), radial-gradient(ellipse at 85% 52%, #ff9962 31%, rgba(255, 255, 255, 0) 99%), radial-gradient( ellipse at -45% 119%, #ff7870 66%, rgba(255, 255, 255, 0) 84%), linear-gradient(110deg, #4a4518 18%, rgba(255, 255, 255, 0) 98%)!important;
   position: absolute;
   top: 0px;
   left: 0px;
@@ -846,6 +846,7 @@ Banner Style
 */
 
 .main-banner {
+  background-image: linear-gradient( 200deg, #4053d8 12%, rgba(255, 255, 255, 0) 65%), linear-gradient(255deg, #e53ab8 71%, rgba(255, 255, 255, 0) 87%), radial-gradient(ellipse at 85% 52%, #ff9962 31%, rgba(255, 255, 255, 0) 99%), radial-gradient( ellipse at -45% 119%, #ff7870 66%, rgba(255, 255, 255, 0) 84%), linear-gradient(110deg, #4a4518 18%, rgba(255, 255, 255, 0) 98%)!important;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -907,12 +908,16 @@ Banner Style
   font-weight: 800;
   color: #2a2a2a;
   line-height: 72px;
-  background: #FA9D4D;
-  background: -webkit-linear-gradient(to right, #FA9D4D 0%, #FF4F6B 100%);
-  background: -moz-linear-gradient(to right, #FA9D4D 0%, #FF4F6B 100%);
-  background: linear-gradient(to right, #FA9D4D 0%, #FF4F6B 100%);
+  background: #faf9f9;
+  background: -webkit-linear-gradient(to right, #faf9f9 0%, #faf9f9 100%);
+  background: -moz-linear-gradient(to right, #faf9f9 0%, #faf9f9 100%);
+  background: linear-gradient(to right, #faf9f9 0%, #faf9f9 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.main-banner .left-content em {
+  color: #fdfdfd;
 }
 
 .main-banner .right-image {
@@ -1483,7 +1488,7 @@ contact
 .contact-us {
   margin-top: 90px;
   padding: 120px 0px;
-  background-image: url(../images/contact-bg.jpg);
+  background-image: linear-gradient( 200deg, #4053d8 12%, rgba(255, 255, 255, 0) 65%), linear-gradient(255deg, #e53ab8 71%, rgba(255, 255, 255, 0) 87%), radial-gradient(ellipse at 85% 52%, #ff9962 31%, rgba(255, 255, 255, 0) 99%), radial-gradient( ellipse at -45% 119%, #ff7870 66%, rgba(255, 255, 255, 0) 84%), linear-gradient(110deg, #4a4518 18%, rgba(255, 255, 255, 0) 98%)!important;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;

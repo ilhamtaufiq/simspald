@@ -83,7 +83,7 @@ class UserController extends Controller
         $user = User::create($input);
         $user->assignRole($request->input('roles'));
         return redirect()->route('users.index')
-                        ->with('success','User created successfully');
+                        ->with('pesan','User Berhasil Dibuat');
     }
 
     
@@ -169,7 +169,7 @@ class UserController extends Controller
         DB::table('model_has_roles')->where('model_id',$id)->delete();
         $user->assignRole($request->input('roles'));
         return redirect()->route('users.index')
-                        ->with('success','User updated successfully');
+                        ->with('pesan','User berhasil diubah');
     }
 
     
@@ -190,7 +190,7 @@ class UserController extends Controller
     {
         User::find($id)->delete();
         return redirect()->route('users.index')
-                        ->with('success','User deleted successfully');
+                        ->with('pesan','User Berhasil Dihapus');
     }
 
 }

@@ -27,6 +27,7 @@ class RealisasiCapaianModel extends Model
         return DB::table('tbl_r_capaian')
         ->join('tbl_kecamatan', 'tbl_kecamatan.id_kec', '=', 'tbl_r_capaian.id_kec')
         ->join('tbl_desa', 'tbl_desa.id_desa', '=', 'tbl_r_capaian.id_desa')
+        ->join('tbl_spald', 'tbl_spald.id_spald', '=', 'tbl_r_capaian.id_spald')
         ->where('id_capaian', $id_capaian)->first();
     }
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\DataRumahModel;
+use App\Models\SpaldModel;
 use DB;
 use Crypt;
 class DataRumahController extends Controller
@@ -11,6 +12,7 @@ class DataRumahController extends Controller
     public function __construct()
     {
         $this->DataRumahModel = new DataRumahModel();
+        $this->SpaldModel = new SpaldModel();
         $this->middleware('auth');
     }
     public function index()
@@ -27,13 +29,12 @@ class DataRumahController extends Controller
     public function add(Request $request)
     {
         $kec = DB::table('tbl_kecamatan')->pluck('n_kec', 'id_kec');
-        $spald = DB::table('tbl_spald')->get();
 
 
         $data = [
             'title' => 'Tambah Daftar Rumah',
             'kecamatan' => $kec,
-            'spald' => $spald,
+            'spald' => $this->SpaldModel->AllData(),
          ];
         return view('admin.rumah.input', $data);
     }

@@ -13,13 +13,11 @@
                   <div class="form-group">
                       <label>Komponen Spald</label>
                       <input hidden type="number" id="id_desa" name="id_desa" class="form-control" placeholder="Tanpa Akses">
-
                       <input hidden type="number" id="id_kec" name="id_kec" class="form-control" placeholder="Tanpa Akses">
-
                     <select id="id_spald" name="id_spald" class="form-control select2bs4" data-dropdown-css-class="select2-danger" style="width: 100%;">
                       <option value="">SPALD</option>
                       @foreach($spald as $s)
-                      <option value="{{$s->id_spald}}">{{$s->nama_ksm}}</option>
+                      <option value="{{$s->id_spald}}">{{$s->nama_ksm}} Desa {{$s->n_desa}} Kecamatan {{$s->n_kec}}</option>
                       @endforeach
                     </select>
                     <div class="text-danger">
