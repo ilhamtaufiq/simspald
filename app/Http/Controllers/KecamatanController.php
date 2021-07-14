@@ -40,7 +40,7 @@ class KecamatanController extends Controller
         [
             'id_kec.required' => "Pilih Pekerjaan SPALD",
             'n_kec.required' => "Format Tidak Sesuai",
-        ],
+        ]
     );
     $data = [        
         'id_kec' => Request()->id_kec,
@@ -72,7 +72,7 @@ class KecamatanController extends Controller
         [
             'id_kec.required' => "Pilih Pekerjaan SPALD",
             'n_kec.required' => "Format Tidak Sesuai",
-        ],
+        ]
     );
     $data = [        
         'id_kec' => Request()->id_kec,

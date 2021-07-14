@@ -78,7 +78,7 @@ class SpaldController extends Controller
             'tahun' => 'required',
             'pagu' => 'required',
 
-        ],
+        ]
     );
     $data = [        
         'tipe' => Request()->tipe,
@@ -142,7 +142,7 @@ class SpaldController extends Controller
             'tahun' => 'required',
             'pagu' => 'required',
 
-        ],
+        ]
     );
 
         $data = [        

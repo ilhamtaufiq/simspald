@@ -42,6 +42,8 @@ Route::get('/', [App\Http\Controllers\WelcomeController::class, 'index'])->name(
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\DashboardController::class, 'index'])->name('home');
+Route::post('/mark-as-read', [App\Http\Controllers\DashboardController::class, 'markNotification'])->name('markNotification');
+
 
 //Kecamatan
 Route::get('/kecamatan', [KecamatanController::class, 'index'])->name('kecamatan');

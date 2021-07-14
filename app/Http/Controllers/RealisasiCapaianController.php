@@ -76,7 +76,7 @@ class RealisasiCapaianController extends Controller
             'akses_layak' => 'required',
             'aa_spalds' => 'required',
             'aa_spaldt' => 'required',
-        ],
+        ]
     );
         $data = [        
         'id_kec' => Request()->id_kec,
@@ -129,7 +129,7 @@ class RealisasiCapaianController extends Controller
             'akses_layak' => 'required',
             'aa_spalds' => 'required',
             'aa_spaldt' => 'required',
-        ],
+        ]
     );
         $data = [        
         'id_kec' => Request()->id_kec,

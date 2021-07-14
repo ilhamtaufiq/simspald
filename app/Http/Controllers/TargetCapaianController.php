@@ -58,7 +58,7 @@ class TargetCapaianController extends Controller
             'akses_dasar' => 'required',
             'aa_spalds' => 'required',
             'aa_spaldt' => 'required',
-        ],
+        ]
     );
     $data = [        
         'id_kec' => Request()->id_kec,
@@ -101,7 +101,7 @@ class TargetCapaianController extends Controller
             'akses_dasar' => 'required',
             'aa_spalds' => 'required',
             'aa_spaldt' => 'required',
-        ],
+        ]
     );
         $data = [        
         'id_kec' => Request()->id_kec,

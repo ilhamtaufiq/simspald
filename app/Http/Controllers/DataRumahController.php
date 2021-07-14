@@ -82,7 +82,7 @@ class DataRumahController extends Controller
             'babs' => 'required',
             'cubluk_perkotaan' => 'required',
             'cubluk_perdesaan' => 'required',
-        ],
+        ]
     );
     $nik = Request()->n_nik;
     $enkripsi= Crypt::encrypt($nik);
@@ -162,7 +162,7 @@ class DataRumahController extends Controller
             'babs' => 'required',
             'cubluk_perkotaan' => 'required',
             'cubluk_perdesaan' => 'required',
-        ],
+        ]
     );
     $nik = Request()->n_nik;
     $enkripsi= Crypt::encrypt($nik);

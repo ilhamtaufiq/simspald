@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
+use notifications;
 
 class DashboardController extends Controller
 {
@@ -52,6 +53,9 @@ class DashboardController extends Controller
 
 
 
+        $notifications = auth()->user()->unreadNotifications;
+        $cn = auth()->user()->unreadNotifications->count();
+
 
 
         $jiwa = DB::table('tbl_rumah')->sum('j_anggota');
@@ -76,9 +80,23 @@ class DashboardController extends Controller
             'aa_spalds' => $aa_spalds,
             'aa_spaldt' => $aa_spaldt,
 
-            'total_rumah' => $total_rumah
+            'total_rumah' => $total_rumah,
+            'notifications' => $notifications,
+            'cn' => $cn,
+
         ];
         return view('admin.dashboard', $data);
 
+    }
+    public function markNotification(Request $request)
+    {
+        auth()->user()
+            ->unreadNotifications
+            ->when($request->input('id'), function ($query) use ($request) {
+                return $query->where('id', $request->input('id'));
+            })
+            ->markAsRead();
+
+        return response()->noContent();
     }
 }

@@ -48,7 +48,7 @@ class KoordinatController extends Controller
             'id_spald.required' => "Pilih Pekerjaan SPALD",
             'lat_.required' => "Format Tidak Sesuai",
             'long_.required' => "Format Tidak Sesuai",
-        ],
+        ]
     );
     $data = [        
         'id_spald' => Request()->id_spald,
@@ -85,7 +85,7 @@ class KoordinatController extends Controller
             'id_spald' => 'required',
             'lat_' => 'required',
             'long_' => 'required',
-        ],
+        ]
     );
     $data = [        
         'id_spald' => Request()->id_spald,

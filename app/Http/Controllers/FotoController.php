@@ -58,7 +58,7 @@ class FotoController extends Controller
             'id_spald.required' => "Pilih Pekerjaan SPALD",
             'deskripsi.required' => "Deskripsi Wajib Diisi!",
             'foto.required' => "Format Tidak Sesuai",
-        ],
+        ]
     );
     $file = Request()->foto;
     $getfile = $file->getClientOriginalName();

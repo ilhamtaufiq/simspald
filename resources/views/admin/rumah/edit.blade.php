@@ -12,8 +12,8 @@
                 <div class="col-sm-6">
                     <div class="form-group">
                         <label>Komponen Spald</label>
-                        <input hidden type="number" id="id_desa" name="id_desa" class="form-control" placeholder="Tanpa Akses">
-                        <input hidden type="number" id="id_kec" name="id_kec" class="form-control" placeholder="Tanpa Akses">
+                        <input hidden value="{{$rumah->id_desa}}" type="number" id="id_desa" name="id_desa" class="form-control" placeholder="Tanpa Akses">
+                        <input hidden value="{{$rumah->id_kec}}" type="number" id="id_kec" name="id_kec" class="form-control" placeholder="Tanpa Akses">
                       <select id="id_spald" name="id_spald" class="form-control select2bs4" data-dropdown-css-class="select2-danger" style="width: 100%;">
                         <option value="{{$rumah->id_spald}}">{{$rumah->nama_ksm}}</option>
                         @foreach($spald as $s)
@@ -190,30 +190,30 @@ $(function () {
     })
 })
 jQuery(document).ready(function (){
-            jQuery($('#kec')).on('change',function(){
-                var KecID = jQuery(this).val();
-                if(KecID)
+            jQuery($('#id_spald')).on('change',function(){
+                var id = jQuery(this).val();
+                if(id)
                 {
                     jQuery.ajax({
-                        url : '/spald/desa/' +KecID,
+                        url : '/spald/kec/' +id,
                         type : "GET",
                         dataType : "json",
                         success:function(data)
                         {
                             console.log(data);
-                            jQuery($('#id_desa')).empty();
-                            jQuery.each(data, function(key,value){
-                            $($('#id_desa')).append('<option value="'+ key +'">'+ value +'</option>');
-                            });
+                            document.getElementById("id_desa").value = data[0].id_desa;
+                            document.getElementById("id_kec").value = data[0].id_kec;
                         }
                     });
                 }
                 else
                 {
                     $($('#id_desa')).empty();
+                    $($('#id_kec')).empty();
+
                 }
             });
-});
+        });
 </script>
 @endsection
 
