@@ -19,7 +19,11 @@
 <script src="<?php echo e(asset('assets')); ?>/js/notify/bootstrap-notify.min.js"></script>
 <script src="<?php echo e(asset('assets')); ?>/js/notify/notify-script.js"></script>
 
-
+<script>
+  function goBack() {
+    window.history.back();
+  }
+  </script>
 <script>
     <?php if(Session::has('pesan')): ?>   
      $.notify({

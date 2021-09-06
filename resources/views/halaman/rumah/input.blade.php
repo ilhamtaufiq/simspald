@@ -232,8 +232,8 @@
                <div class="card-footer">
                   <div class="col-sm-9 offset-sm-3">
                      <button class="btn btn-pill btn-primary" type="submit">Submit</button>
-                     <input class="btn btn-pill btn-light" type="reset" value="Cancel">
-                  </div>
+                     <button onclick="goBack()" class="btn btn-pill btn-warning btn-air-warning" type="button" title="">Batal</button>
+                    </div>
                </div>
             </form>
          </div>

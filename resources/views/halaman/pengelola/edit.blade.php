@@ -71,7 +71,7 @@
                  <br>
                  <div class="mb-2">
                     <button class="btn btn-pill btn-primary btn-air-primary" type="submit" title="">Simpan</button>
-                    <button class="btn btn-pill btn-warning btn-air-warning" type="button" title="">Batal</button>
+                    <button onclick="goBack()" class="btn btn-pill btn-warning btn-air-warning" type="button" title="">Batal</button>
 
                  </div>
                 </form>

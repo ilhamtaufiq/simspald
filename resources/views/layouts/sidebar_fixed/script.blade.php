@@ -19,7 +19,11 @@
 <script src="{{asset('assets')}}/js/notify/bootstrap-notify.min.js"></script>
 <script src="{{asset('assets')}}/js/notify/notify-script.js"></script>
 
-
+<script>
+  function goBack() {
+    window.history.back();
+  }
+  </script>
 <script>
     @if(Session::has('pesan'))   
      $.notify({
