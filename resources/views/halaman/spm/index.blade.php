@@ -34,6 +34,16 @@
         </div>
         <div class="card-body">
           {{-- <div id="basic-bar"></div> --}}
+          <p>Total Rumah: {{number_format($total_rumah,0,",",".")}} Unit</p>  
+          <p>Akses Dasar SPALDS: @php
+            $ad_spalds = $akses_dasar_spalds/$total_rumah*100;
+            echo number_format($ad_spalds,2)."%";
+          @endphp</p>
+          <p>Akses Aman SPALDT: @php
+          $ad_spaldt = $akses_aman_spaldt/$total_rumah*100;
+          echo number_format($ad_spaldt,2)."%";
+          @endphp</p>
+        <br/>
           <h3>Standar Pelayanan Minimal (SPM) <br/>
             Sub Urusan Air Limbah Domestik Kab. Cianjur (2020-2021)</h3>
           <div class="dt-ext table-responsive">
@@ -55,8 +65,8 @@
                 <tr>
                   <td>{{$i++}}</td>
                   <td>{{$item->n_kec}}</td>
-                  <td>{{number_format($item->outcome,0,","","".")}}</td>
-                  <td>{{number_format($item->jumlah_penduduk,0,","","".")}}</td>
+                  <td>{{number_format($item->outcome,0,",",".")}}</td>
+                  <td>{{number_format($item->jumlah_penduduk,0,",",".")}}</td>
                   <td>@php
                       $persentase = $item->outcome/$item->jumlah_penduduk*100;
                       echo number_format($persentase,2)."%";
@@ -66,7 +76,14 @@
               </tbody>
             </table>
           </div>
-          {{-- <p>Tanpa Akses: {{$tanpa_akses}}</p> <br/>
+          {{-- <p>Akses Dasar SPALDS: @php
+              $ad_spalds = $akses_dasar_spalds/$total_rumah*100;
+              echo number_format($ad_spalds,2)."%";
+          @endphp</p> <br/>
+          <p>Akses Aman SPALDT: @php
+            $ad_spaldt = $akses_aman_spaldt/$total_rumah*100;
+            echo number_format($ad_spaldt,2)."%";
+        @endphp</p> <br/>
           <p>Akses Dasar: {{$akses_dasar}}</p> <br/>
           <p>Akses Layak: {{$akses_dasar+$tanpa_akses}}</p> <br>
           <p>Total Rumah: {{number_format($total_rumah,0,",",".")}}</p>         --}}

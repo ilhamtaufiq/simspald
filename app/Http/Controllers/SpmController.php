@@ -42,6 +42,12 @@ class SpmController extends Controller
             ->join('output','ipalds.id_spald','=','output.id_spald')
             ->groupBy(['n_kec'])
             ->get(),
+            $jumlah_dasar_spalds = DB::table('ipalds')
+            ->where('id_kegiatan',2)
+            ->sum('jiwa'),
+            $jumlah_aman_spaldt = DB::table('ipalds')
+            ->where('id_kegiatan',1)
+            ->sum('jiwa'),
         ];
         // dd($desa);
         // $desa = Ipald::query()->select(['sum(kuantitas) as jiwa','n_kec','user_name'])
@@ -51,11 +57,14 @@ class SpmController extends Controller
             'layout' => $layout,
             'tanpa_akses' => $babs + $cubluk_perkotaan,
             'akses_dasar' => $akses_dasar,
-            'total_rumah' => $jumlah_penduduk,
+            'total_rumah' => $jumlah_penduduk/5,
             'akses_layak' => $akses_layak,
             'akses_aman_spalds' => $aa_spalds,
             'akses_aman_spaldt' => $aa_ipald,
-            'desa' => $desa
+            'desa' => $desa,
+            'akses_dasar_spalds' => $jumlah_dasar_spalds/5,
+            'akses_aman_spaldt' => $jumlah_aman_spaldt/5,
+
         ]);
     }
 }

@@ -33,6 +33,16 @@
         </div>
         <div class="card-body">
           
+          <p>Total Rumah: <?php echo e(number_format($total_rumah,0,",",".")); ?> Unit</p>  
+          <p>Akses Dasar SPALDS: <?php
+            $ad_spalds = $akses_dasar_spalds/$total_rumah*100;
+            echo number_format($ad_spalds,2)."%";
+          ?></p>
+          <p>Akses Aman SPALDT: <?php
+          $ad_spaldt = $akses_aman_spaldt/$total_rumah*100;
+          echo number_format($ad_spaldt,2)."%";
+          ?></p>
+        <br/>
           <h3>Standar Pelayanan Minimal (SPM) <br/>
             Sub Urusan Air Limbah Domestik Kab. Cianjur (2020-2021)</h3>
           <div class="dt-ext table-responsive">
@@ -54,8 +64,8 @@
                 <tr>
                   <td><?php echo e($i++); ?></td>
                   <td><?php echo e($item->n_kec); ?></td>
-                  <td><?php echo e(number_format($item->outcome)); ?></td>
-                  <td><?php echo e(number_format($item->jumlah_penduduk)); ?></td>
+                  <td><?php echo e(number_format($item->outcome,0,",",".")); ?></td>
+                  <td><?php echo e(number_format($item->jumlah_penduduk,0,",",".")); ?></td>
                   <td><?php
                       $persentase = $item->outcome/$item->jumlah_penduduk*100;
                       echo number_format($persentase,2)."%";
