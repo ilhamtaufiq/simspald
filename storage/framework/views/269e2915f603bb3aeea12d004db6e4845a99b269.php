@@ -26,8 +26,8 @@
                               </li>
                               <li>
                                  <div class="row">
-                                    <div class="col-4 text-center"><a href="/users"><i data-feather="users"></i></a></div>
-                                    <div class="col-4 text-center"><a href="/roles"><i data-feather="users"></i></a></div>
+                                    <div class="col-4 text-center"><a href="/users"><i data-feather="users"></i>Pengguna</a></div>
+                                    <div class="col-4 text-center"><a href="/roles"><i data-feather="users"></i>Roles</a></div>
                                  </div>
                               </li>
                            </ul>
