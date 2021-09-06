@@ -1,0 +1,22 @@
+
+##teamcity[testCount count='2' flowId='2574']
+
+##teamcity[testSuiteStarted name='Browser Test Suite' flowId='2574']
+
+##teamcity[testSuiteStarted name='Tests\Browser\AuthTest' locationHint='php_qn:///Users/ilhamtaufiq/www/abs/tests/Browser/AuthTest.php::\Tests\Browser\AuthTest' flowId='2574']
+
+##teamcity[testStarted name='testExample' locationHint='php_qn:///Users/ilhamtaufiq/www/abs/tests/Browser/AuthTest.php::\Tests\Browser\AuthTest::testExample' flowId='2574']
+
+##teamcity[testFinished name='testExample' duration='28867' flowId='2574']
+
+##teamcity[testSuiteFinished name='Tests\Browser\AuthTest' flowId='2574']
+
+##teamcity[testSuiteStarted name='Tests\Browser\ExampleTest' locationHint='php_qn:///Users/ilhamtaufiq/www/abs/tests/Browser/ExampleTest.php::\Tests\Browser\ExampleTest' flowId='2574']
+
+##teamcity[testStarted name='testBasicExample' locationHint='php_qn:///Users/ilhamtaufiq/www/abs/tests/Browser/ExampleTest.php::\Tests\Browser\ExampleTest::testBasicExample' flowId='2574']
+
+##teamcity[testFinished name='testBasicExample' duration='15032' flowId='2574']
+
+##teamcity[testSuiteFinished name='Tests\Browser\ExampleTest' flowId='2574']
+
+##teamcity[testSuiteFinished name='Browser Test Suite' flowId='2574']

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="" tests="2" assertions="2" errors="0" warnings="0" failures="0" skipped="0" time="12.989085">
+    <testsuite name="Browser Test Suite" tests="2" assertions="2" errors="0" warnings="0" failures="0" skipped="0" time="12.989085">
+      <testsuite name="Tests\Browser\AuthTest" file="/Users/ilhamtaufiq/www/abs/tests/Browser/AuthTest.php" tests="1" assertions="1" errors="0" warnings="0" failures="0" skipped="0" time="9.035121">
+        <testcase name="testExample" class="Tests\Browser\AuthTest" classname="Tests.Browser.AuthTest" file="/Users/ilhamtaufiq/www/abs/tests/Browser/AuthTest.php" line="18" assertions="1" time="9.035121"/>
+      </testsuite>
+      <testsuite name="Tests\Browser\ExampleTest" file="/Users/ilhamtaufiq/www/abs/tests/Browser/ExampleTest.php" tests="1" assertions="1" errors="0" warnings="0" failures="0" skipped="0" time="3.953964">
+        <testcase name="testBasicExample" class="Tests\Browser\ExampleTest" classname="Tests.Browser.ExampleTest" file="/Users/ilhamtaufiq/www/abs/tests/Browser/ExampleTest.php" line="16" assertions="1" time="3.953964"/>
+      </testsuite>
+    </testsuite>
+  </testsuite>
+</testsuites>

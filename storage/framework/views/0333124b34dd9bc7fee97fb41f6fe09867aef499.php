@@ -1,0 +1,321 @@
+<?php $__env->startSection('title', $title); ?>
+
+<?php $__env->startSection('css'); ?>
+<link rel="stylesheet" type="text/css" href="<?php echo e(route('/')); ?>/assets/css/select2.css">
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('style'); ?>
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('breadcrumb-title'); ?>
+	<h2><?php echo e($title); ?></h2>
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('breadcrumb-items'); ?>
+	<li class="breadcrumb-item">Rumah</li>
+	<li class="breadcrumb-item active"><?php echo e($title); ?></li>
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+<div class="container-fluid">
+   <div class="row">
+      <div class="col-sm-12">
+         <div class="card">
+            <div class="card-header">
+               <h5><?php echo e($title); ?></h5>
+            </div>
+            <form class="form theme-form" action="<?php echo e(route('rumah.update', $rumah->id)); ?>" method="POST">
+                <?php echo csrf_field(); ?>
+                <?php echo method_field('PUT'); ?>
+               <div class="card-body">
+                  <div class="row">
+                     <div class="col">
+                        <div class="form-group row">
+                           <label class="col-sm-3 col-form-label">Unit SPALD</label>
+                           <div class="col-sm-9">
+                                <select id="id_spald" name="id_spald" class="js-example-basic-single col-sm-12" placeholder="SPALD">
+                                    <option value="<?php echo e($rumah->id_spald); ?>"><?php echo e($rumah->ipald->nama_ksm); ?></option>
+                                    <?php $__currentLoopData = $spald; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                        <option value="<?php echo e($item->id_spald); ?>"><?php echo e($item->ipald->nama_ksm); ?></option>
+                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>                                
+                                </select>  
+                                <div class="text-danger">
+                                    <?php $__errorArgs = ['id_spald'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                                        <?php echo e($message); ?>
+
+                                    <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                                </div>                               
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                           <label class="col-sm-3 col-form-label">RW</label>
+                            <div class="col-sm-9">
+                                <input value="<?php echo e($rumah->rw); ?>" class="form-control" type="number" placeholder="RW" name="rw">
+                                <div class="text-danger">
+                                    <?php $__errorArgs = ['rw'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                                        <?php echo e($message); ?>
+
+                                    <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">RT</label>
+                            <div class="col-sm-9">
+                                <input value="<?php echo e($rumah->rt); ?>" class="form-control" type="number" placeholder="RT" name="rt">
+                                <div class="text-danger">
+                                    <?php $__errorArgs = ['rt'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                                        <?php echo e($message); ?>
+
+                                    <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Nama Kepala Keluaraga</label>
+                            <div class="col-sm-9">
+                                <input value="<?php echo e($rumah->nama_kepala_keluarga); ?>" class="form-control" type="text" placeholder="Nama Kepala Keluarga" name="nama_kepala_keluarga">
+                                <div class="text-danger">
+                                    <?php $__errorArgs = ['nama_kepala_keluarga'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                                        <?php echo e($message); ?>
+
+                                    <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                           <label class="col-sm-3 col-form-label">Nomor NIK</label>
+                           <div class="col-sm-9">
+                                <input value="<?php echo e($rumah->nomor_nik); ?>" class="form-control digits" id="" type="text" name="nomor_nik" placeholder="Nomor NIK Kepala Keluarga">
+                           </div>
+                           <div class="text-danger">
+                            <?php $__errorArgs = ['nomor_nik'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                                <?php echo e($message); ?>
+
+                            <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Jumlah Anggota Keluarga</label>
+                            <div class="col-sm-9">
+                                 <input value="<?php echo e($rumah->jumlah_anggota_keluarga); ?>" class="form-control digits" id="" type="number" name="jumlah_anggota_keluarga" placeholder="Jumlah Anggota Keluarga">
+                            </div>
+                            <div class="text-danger">
+                             <?php $__errorArgs = ['jumlah_anggota_keluarga'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                                 <?php echo e($message); ?>
+
+                             <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                             </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Kepadatan Penduduk</label>
+                            <div class="col-sm-9">
+                                 <input value="<?php echo e($rumah->kepadatan_penduduk); ?>" class="form-control digits" id="" type="number" name="kepadatan_penduduk" placeholder="Kepadatan Penduduk">
+                            </div>
+                            <div class="text-danger">
+                             <?php $__errorArgs = ['kepadatan_penduduk'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                                 <?php echo e($message); ?>
+
+                             <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                             </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Klasifikasi</label>
+                            <div class="col-sm-9">
+                                <select id="kec" name="klasifikasi" class="js-example-basic-single col-sm-12" placeholder="Klasifikasi">
+                                    <option value="Perdesaan">Perdesaan</option>
+                                    <option value="Perkotaan">Perkotaan</option>
+                                </select>                        
+                            </div>
+                            <div class="text-danger">
+                             <?php $__errorArgs = ['klasifikasi'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                                 <?php echo e($message); ?>
+
+                             <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Risiko Sanitasi</label>
+                            <div class="col-sm-9">
+                                <div class="form-group m-t-15 m-checkbox-inline mb-0 custom-radio-ml">
+                                    <div class="radio radio-primary">
+                                        <input id="radioinline1" type="radio" name="risiko_sanitasi" value="1" <?php echo e(($rumah->risiko_sanitasi=="1") ? "checked" : ""); ?>>
+                                        <label class="mb-0" for="radioinline1">Sangat Rendah</label>
+                                    </div>
+                                    <div class="radio radio-primary">
+                                        <input id="radioinline2" type="radio" name="risiko_sanitasi" value="2" <?php echo e(($rumah->risiko_sanitasi=="2") ? "checked" : ""); ?>>
+                                        <label class="mb-0" for="radioinline2">Rendah</label>
+                                    </div>
+                                    <div class="radio radio-primary">
+                                        <input id="radioinline3" type="radio" name="risiko_sanitasi" value="3" <?php echo e(($rumah->risiko_sanitasi=="3") ? "checked" : ""); ?>>
+                                        <label class="mb-0" for="radioinline3">Tinggi</label>
+                                    </div>
+                                    <div class="radio radio-primary">
+                                        <input id="radioinline4" type="radio" name="risiko_sanitasi" value="4" <?php echo e(($rumah->risiko_sanitasi=="4") ? "checked" : ""); ?>>
+                                        <label class="mb-0" for="radioinline4">Sangat Tinggi</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-danger">
+                             <?php $__errorArgs = ['risiko_sanitasi'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                                 <?php echo e($message); ?>
+
+                             <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Kondisi Ekonomi Keluarga</label>
+                            <div class="col-sm-9">
+                                <div class="form-group m-t-15 m-checkbox-inline mb-0 custom-radio-ml">
+                                    <div class="radio radio-primary">
+                                        <input id="mbr" type="radio" name="pendapatan" value="MBR" <?php echo e(($rumah->pendapatan=="MBR") ? "checked" : ""); ?>>
+                                        <label class="mb-0" for="mbr">MBR</label>
+                                    </div>
+                                    <div class="radio radio-primary">
+                                        <input id="non_mbr" type="radio" name="pendapatan" value="Non MBR" <?php echo e(($rumah->pendapatan=="Non MBR") ? "checked" : ""); ?>>
+                                        <label class="mb-0" for="non_mbr">Non MBR</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Tanpa Akses dan Akses Dasar</label>
+                            <div class="col-sm-9">
+                                <div class="form-group m-t-15 m-checkbox-inline mb-0 custom-checkbox-ml">
+                                    <div class="checkbox checkbox-primary">
+                                        <input id="babs" type="checkbox" name="babs" value="1" <?php echo e(($rumah->babs=="1") ? "checked" : ""); ?>>
+                                        <label class="mb-0" for="babs">BABS</label>
+                                    </div>
+                                    <div class="checkbox checkbox-primary">
+                                        <input id="cubluk_perkotaan" type="checkbox" name="cubluk_perkotaan" value="1" <?php echo e(($rumah->cubluk_perkotaan=="1") ? "checked" : ""); ?>>
+                                        <label class="mb-0" for="cubluk_perkotaan">Cubluk Perkotaan</label>
+                                    </div>
+                                    <div class="checkbox checkbox-primary">
+                                        <input id="cubluk_perdesaan" type="checkbox" name="cubluk_perdesaan" value="1" <?php echo e(($rumah->cubluk_perdesaan=="1") ? "checked" : ""); ?>>
+                                        <label class="mb-0" for="cubluk_perdesaan">Cubluk Perdesaan</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Akses Layak</label>
+                            <div class="col-sm-9">
+                                <div class="form-group m-t-15 m-checkbox-inline mb-0 custom-checkbox-ml">
+                                    <div class="checkbox checkbox-primary">
+                                        <input id="al1" type="checkbox" name="al_ts_individual" value="1" <?php echo e(($rumah->al_ts_individual=="1") ? "checked" : ""); ?>>
+                                        <label class="mb-0" for="al1">Akses Layak Tangki Septik Individual</label>
+                                    </div>
+                                    <div class="checkbox checkbox-primary">
+                                        <input id="al2" type="checkbox" name="al_ts_komunal" value="1" <?php echo e(($rumah->al_ts_komunal=="1") ? "checked" : ""); ?>>
+                                        <label class="mb-0" for="al2">Akses Layak Tangki Septik Komunal</label>
+                                    </div>
+                                    <div class="checkbox checkbox-primary">
+                                        <input id="al3" type="checkbox" name="al_ipald" value="1" <?php echo e(($rumah->al_ipald=="1") ? "checked" : ""); ?>>
+                                        <label class="mb-0" for="al3">Akses Layak SPALD-T</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Akses Aman</label>
+                            <div class="col-sm-9">
+                                <div class="form-group m-t-15 m-checkbox-inline mb-0 custom-checkbox-ml">
+                                    <div class="checkbox checkbox-primary">
+                                        <input id="aa1" type="checkbox" name="aa_ts_individual" value="1" <?php echo e(($rumah->aa_ts_individual=="1") ? "checked" : ""); ?>>
+                                        <label class="mb-0" for="aa1">Akses Aman Tangki Septik Individual</label>
+                                    </div>
+                                    <div class="checkbox checkbox-primary">
+                                        <input id="aa2" type="checkbox" name="aa_ts_komunal" value="1" <?php echo e(($rumah->aa_ts_komunal=="1") ? "checked" : ""); ?>>
+                                        <label class="mb-0" for="aa2">Akses Aman Tangki Septik Komunal</label>
+                                    </div>
+                                    <div class="checkbox checkbox-primary">
+                                        <input id="aa3" type="checkbox" name="aa_ipald" value="1" <?php echo e(($rumah->aa_ipald=="1") ? "checked" : ""); ?>>
+                                        <label class="mb-0" for="aa3">Akses Aman SPALD-T</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="card-footer">
+                  <div class="col-sm-9 offset-sm-3">
+                     <button class="btn btn-pill btn-primary" type="submit">Submit</button>
+                     <input class="btn btn-pill btn-light" type="reset" value="Cancel">
+                  </div>
+               </div>
+            </form>
+         </div>
+      </div>
+   </div>
+</div>
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('script'); ?>
+<script src="<?php echo e(route('/')); ?>/assets/js/select2/select2.full.min.js"></script>
+<script src="<?php echo e(route('/')); ?>/assets/js/select2/select2-custom.js"></script>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make($layout, \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /Users/ilhamtaufiq/www/abs/resources/views/halaman/rumah/edit.blade.php ENDPATH**/ ?>
