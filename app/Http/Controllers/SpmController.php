@@ -48,6 +48,7 @@ class SpmController extends Controller
             $jumlah_aman_spaldt = DB::table('ipalds')
             ->where('id_kegiatan',1)
             ->sum('jiwa'),
+
         ];
         // dd($desa);
         // $desa = Ipald::query()->select(['sum(kuantitas) as jiwa','n_kec','user_name'])
@@ -58,12 +59,15 @@ class SpmController extends Controller
             'tanpa_akses' => $babs + $cubluk_perkotaan,
             'akses_dasar' => $akses_dasar,
             'total_rumah' => $jumlah_penduduk/5,
+            'jumlah_penduduk' => $jumlah_penduduk,
             'akses_layak' => $akses_layak,
             'akses_aman_spalds' => $aa_spalds,
-            'akses_aman_spaldt' => $aa_ipald,
+            'aa_ipald' => $aa_ipald,
             'desa' => $desa,
             'akses_dasar_spalds' => $jumlah_dasar_spalds/5,
             'akses_aman_spaldt' => $jumlah_aman_spaldt/5,
+            'outcome_spalds' => $jumlah_dasar_spalds,
+            'outcome_spaldt' => $jumlah_aman_spaldt,
 
         ]);
     }

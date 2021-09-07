@@ -32,16 +32,20 @@
             <h5>Realisasi Capain SPM</h5>
         </div>
         <div class="card-body">
-          
+          <div id="basic-bar"></div>
+          <h3>Target</h3>
           <p>Total Rumah: <?php echo e(number_format($total_rumah,0,",",".")); ?> Unit</p>  
-          <p>Akses Dasar SPALDS: <?php
+          <p>Total Penduduk: <?php echo e(number_format($jumlah_penduduk,0,",",".")); ?> Jiwa</p>  
+
+          <p>Akses Dasar SPALD-S: <?php
             $ad_spalds = $akses_dasar_spalds/$total_rumah*100;
             echo number_format($ad_spalds,2)."%";
-          ?></p>
-          <p>Akses Aman SPALDT: <?php
+          ?> <?php echo e($akses_dasar_spalds); ?> Unit Rumah</p>
+          <p>Akses Aman SPALD-T: <?php
           $ad_spaldt = $akses_aman_spaldt/$total_rumah*100;
           echo number_format($ad_spaldt,2)."%";
-          ?></p>
+          ?> <?php echo e($akses_aman_spaldt); ?> Unit Rumah</p>
+          
         <br/>
           <h3>Standar Pelayanan Minimal (SPM) <br/>
             Sub Urusan Air Limbah Domestik Kab. Cianjur (2020-2021)</h3>
@@ -133,7 +137,7 @@ var options2 = {
         enabled: false
     },
     series: [{
-        data: [<?php echo e($tanpa_akses); ?>, <?php echo e($akses_dasar); ?>, <?php echo e($akses_layak); ?>, <?php echo e($akses_aman_spalds); ?>, <?php echo e($akses_aman_spaldt); ?>]
+        data: [<?php echo e($tanpa_akses); ?>, <?php echo e($akses_dasar); ?>, <?php echo e($akses_layak); ?>, <?php echo e($akses_aman_spalds); ?>, <?php echo e($aa_ipald); ?>]
     }],
     xaxis: {
         categories: ['Tanpa Akses', 'Akses Dasar', 'Akses Layak', 'Aman SPALD-S', 'Aman SPALD-T'],

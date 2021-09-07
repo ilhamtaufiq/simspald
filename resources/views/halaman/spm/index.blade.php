@@ -33,16 +33,20 @@
             <h5>Realisasi Capain SPM</h5>
         </div>
         <div class="card-body">
-          {{-- <div id="basic-bar"></div> --}}
+          <div id="basic-bar"></div>
+          <h3>Target</h3>
           <p>Total Rumah: {{number_format($total_rumah,0,",",".")}} Unit</p>  
-          <p>Akses Dasar SPALDS: @php
+          <p>Total Penduduk: {{number_format($jumlah_penduduk,0,",",".")}} Jiwa</p>  
+
+          <p>Akses Dasar SPALD-S: @php
             $ad_spalds = $akses_dasar_spalds/$total_rumah*100;
             echo number_format($ad_spalds,2)."%";
-          @endphp</p>
-          <p>Akses Aman SPALDT: @php
+          @endphp {{$akses_dasar_spalds}} Unit Rumah</p>
+          <p>Akses Aman SPALD-T: @php
           $ad_spaldt = $akses_aman_spaldt/$total_rumah*100;
           echo number_format($ad_spaldt,2)."%";
-          @endphp</p>
+          @endphp {{$akses_aman_spaldt}} Unit Rumah</p>
+          
         <br/>
           <h3>Standar Pelayanan Minimal (SPM) <br/>
             Sub Urusan Air Limbah Domestik Kab. Cianjur (2020-2021)</h3>
@@ -144,7 +148,7 @@ var options2 = {
         enabled: false
     },
     series: [{
-        data: [{{$tanpa_akses}}, {{$akses_dasar}}, {{$akses_layak}}, {{$akses_aman_spalds}}, {{$akses_aman_spaldt}}]
+        data: [{{$tanpa_akses}}, {{$akses_dasar}}, {{$akses_layak}}, {{$akses_aman_spalds}}, {{$aa_ipald}}]
     }],
     xaxis: {
         categories: ['Tanpa Akses', 'Akses Dasar', 'Akses Layak', 'Aman SPALD-S', 'Aman SPALD-T'],
