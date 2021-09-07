@@ -27,6 +27,7 @@
             </li> --}}
             {{-- <li><a class="text-dark" href="#!" onclick="javascript:toggleFullScreen()"><i data-feather="maximize"></i></a></li> --}}
             <li class="onhover-dropdown">
+               @role('superadmin')
                <img class="img-fluid img-shadow-warning" src="{{asset('assets/images/dashboard/bookmark.png')}}" alt="">
                <div class="onhover-show-div bookmark-flip">
                   <div class="flip-card">
@@ -48,6 +49,7 @@
                      </div>
                   </div>
                </div>
+               @endrole
             </li>
             <li class="onhover-dropdown">
                <img class="img-fluid img-shadow-secondary" src="{{asset('assets/images/dashboard/like.png')}}" alt="">

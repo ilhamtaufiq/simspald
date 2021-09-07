@@ -14,6 +14,7 @@
             
             
             <li class="onhover-dropdown">
+               <?php if (Auth::check() && Auth::user()->hasRole('superadmin')): ?>
                <img class="img-fluid img-shadow-warning" src="<?php echo e(asset('assets/images/dashboard/bookmark.png')); ?>" alt="">
                <div class="onhover-show-div bookmark-flip">
                   <div class="flip-card">
@@ -35,6 +36,7 @@
                      </div>
                   </div>
                </div>
+               <?php endif; ?>
             </li>
             <li class="onhover-dropdown">
                <img class="img-fluid img-shadow-secondary" src="<?php echo e(asset('assets/images/dashboard/like.png')); ?>" alt="">
